@@ -1,7 +1,8 @@
 {
+  "AGENTS.md": "35593bcc6f6bfd2cec7ec8db14b2b097586837214b49ef570d4b876dae936faf",
   "README.md": "dfd7a6af1aed4a47f31b6c867db78f2c0a72c6e322a03c1b004ff6acc8e772a7",
   "VALIDATION.md": "aafba04444af913587a0ce57af6720868e4633582b3769f0778a14487e7d28ce",
-  "build-package.py": "2a75045f8bab8a83cc24a2124ce6c51c5dca9bf5a0b5ac99daec8e33d7a23a9b",
+  "build-package.py": "b66bbd4b2ffe20ad2ea3caf399aef11d981332a34b5dd04f134753ce0f4addd6",
   "dependencies.lock.json": "9216c1225a7522886e1e70f525bc810ec11b2c050098d1a4fae9b6f48b6c31d7",
   "install.sh": "74f0200451a6ec9b1b8861bca2394d311d8455ffb9a13b71acbdc1d12b44dbcb",
   "installer.py": "35399f8adeafd270432b2a752ead49ab3af4c6b1a8d152e86f0abd82b8182887",

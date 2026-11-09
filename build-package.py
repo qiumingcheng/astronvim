@@ -9,7 +9,7 @@ from pathlib import Path
 import tarfile
 
 ROOT = Path(__file__).resolve().parent
-ALLOWED_TOP = {'install.sh', 'installer.py', 'recipes.py', 'build-package.py', 'README.md',
+ALLOWED_TOP = {'install.sh', 'installer.py', 'recipes.py', 'build-package.py', 'README.md', 'AGENTS.md',
                'dependencies.lock.json', 'plugins.lock.json', 'parsers.lock.json', 'patches.lock.json',
                'source-files.json', 'VALIDATION.md'}
 ALLOWED_DIRS = {'overlay', 'patches', 'tests', 'vscode-extension'}
