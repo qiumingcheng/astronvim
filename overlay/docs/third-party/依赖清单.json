@@ -1,0 +1,636 @@
+{
+  "schema": "source-install-1",
+  "release": "2026-11-09-source.1",
+  "note": "This is the locked reconstruction input list; not a claim of all-platform validation.",
+  "native": {
+    "tree-sitter": {
+      "version": "0.26.6",
+      "source": {
+        "url": "https://crates.io/api/v1/crates/tree-sitter-cli/0.26.6/download",
+        "sha256": "8cc73528f0f82e1720072de8d3e1bfd68e2bd93d34c03a0440d60d536b22d341"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.6/tree-sitter-linux-x64.gz",
+          "sha256": "2b9595064a7d9dbe208c6f09f521d73061f8039e4ffcc2fd08979d249aeabb54"
+        },
+        "aarch64": {
+          "url": "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.6/tree-sitter-linux-arm64.gz",
+          "sha256": "7beef62e5d2683085b87188be83b1a73c59229110a125c5f12d922ae57789a7a"
+        }
+      }
+    },
+    "gdb": {
+      "version": "17.2",
+      "source": {
+        "url": "https://sourceware.org/pub/gdb/releases/gdb-17.2.tar.xz",
+        "sha256": "1c036c0d72e4b3d1fb5c94c88632add6f9d76f4d7c4d2ea793c12a9f19a3228c"
+      }
+    },
+    "codelldb": {
+      "version": "1.12.3",
+      "source": {
+        "url": "https://codeload.github.com/vadimcn/codelldb/tar.gz/refs/tags/v1.12.3",
+        "sha256": "8a7d183014766e695d90c14c3a4f24a5e7937eb7b0d4954b074a85bd00f4f841"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/vadimcn/codelldb/releases/download/v1.12.3/codelldb-linux-x64.vsix",
+          "sha256": "1cd7f386598022b51a5b93b9ffa23e812b23f519cfe1833384ec4bef4bfd1be1"
+        },
+        "aarch64": {
+          "url": "https://github.com/vadimcn/codelldb/releases/download/v1.12.3/codelldb-linux-arm64.vsix",
+          "sha256": "0887f67d440554617894266f80706b700907c36b95e6e49d23b95a0e05318101"
+        }
+      }
+    },
+    "ripgrep": {
+      "version": "15.2.0",
+      "source": {
+        "url": "https://codeload.github.com/BurntSushi/ripgrep/tar.gz/refs/tags/15.2.0",
+        "sha256": "7605249d3eb0d5f170e3414498e3344e26b1e7a147aec518b57090b80036a562"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz",
+          "sha256": "33e15bcf1624b25cdd2a55813a47a2f95dbe126268203e76aa6a585d1e7b149c"
+        },
+        "aarch64": {
+          "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-unknown-linux-musl.tar.gz",
+          "sha256": "800b1e7206afe799dfb5a6901f23147cfaabe0e52210538100f61e86e1740915"
+        }
+      }
+    },
+    "fd": {
+      "version": "10.5.0",
+      "source": {
+        "url": "https://codeload.github.com/sharkdp/fd/tar.gz/refs/tags/v10.5.0",
+        "sha256": "e6d9e90730bf316101691e49d59cc02565278dc3779d33a77423801569484851"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.5.0/fd-v10.5.0-x86_64-unknown-linux-musl.tar.gz",
+          "sha256": "761c72dc8e120d85b22292063be8a796e2eeb20eb3e4f38b8fa2343ccf3514a7"
+        },
+        "aarch64": {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.5.0/fd-v10.5.0-aarch64-unknown-linux-musl.tar.gz",
+          "sha256": "d76c4317f7d5dba69f8a2a15856c90c777e7f0dd4e85f0de8c76de6992c374d4"
+        }
+      }
+    },
+    "bear": {
+      "version": "4.2.2",
+      "source": {
+        "url": "https://codeload.github.com/rizsotto/Bear/tar.gz/refs/tags/4.2.2",
+        "sha256": "9f9d0236bf0751cb4f5d747c077697f396546ba1ad8653c2e9b7192ea47df14a"
+      }
+    },
+    "expat": {
+      "version": "2.4.1",
+      "source": {
+        "url": "https://github.com/libexpat/libexpat/releases/download/R_2_4_1/expat-2.4.1.tar.xz",
+        "sha256": "cf032d0dba9b928636548e32b327a2d66b1aab63c4f4a13dd132c2d1d2f2fb6a"
+      }
+    },
+    "gmp": {
+      "version": "6.2.1",
+      "source": {
+        "url": "https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz",
+        "sha256": "fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2"
+      }
+    },
+    "neovim": {
+      "version": "0.12.5",
+      "source": {
+        "url": "https://codeload.github.com/neovim/neovim/tar.gz/refs/tags/v0.12.5",
+        "sha256": "a810c95332317bd0017e1ca07e376a8472c79075cbed00fa3737d190a8a0a45a"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-x86_64.tar.gz",
+          "sha256": "bce0f56eda1f1b1db6eee8f4133d7a38813ea07933837dd1777411ca384c6875"
+        },
+        "aarch64": {
+          "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-arm64.tar.gz",
+          "sha256": "1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725"
+        }
+      }
+    },
+    "libffi": {
+      "version": "3.4.6",
+      "source": {
+        "url": "https://github.com/libffi/libffi/releases/download/v3.4.6/libffi-3.4.6.tar.gz",
+        "sha256": "b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e"
+      }
+    },
+    "mpfr": {
+      "version": "4.1.0",
+      "source": {
+        "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.1.0.tar.xz",
+        "sha256": "0c98a3f1732ff6ca4ea690552079da9c597872d30e96ec28414ee23c95558a7f"
+      }
+    },
+    "openssl": {
+      "version": "3.0.18",
+      "source": {
+        "url": "https://github.com/openssl/openssl/releases/download/openssl-3.0.18/openssl-3.0.18.tar.gz",
+        "sha256": "d80c34f5cf902dccf1f1b5df5ebb86d0392e37049e5d73df1b3abae72e4ffe8b"
+      }
+    },
+    "bzip2": {
+      "version": "1.0.8",
+      "source": {
+        "url": "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz",
+        "sha256": "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
+      }
+    },
+    "xz": {
+      "version": "5.6.4",
+      "source": {
+        "url": "https://github.com/tukaani-project/xz/releases/download/v5.6.4/xz-5.6.4.tar.xz",
+        "sha256": "829ccfe79d769748f7557e7a4429a64d06858e27e1e362e25d01ab7b931d9c95"
+      }
+    },
+    "zlib": {
+      "version": "1.3.1",
+      "source": {
+        "url": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
+        "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23"
+      }
+    },
+    "ncurses": {
+      "version": "6.5",
+      "source": {
+        "url": "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz",
+        "sha256": "136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6"
+      }
+    },
+    "python": {
+      "version": "3.9.9",
+      "source": {
+        "url": "https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tar.xz",
+        "sha256": "06828c04a573c073a4e51c4292a27c1be4ae26621c3edc7cf9318418ce3b6d27"
+      }
+    },
+    "ninja": {
+      "version": "1.12.1",
+      "source": {
+        "url": "https://codeload.github.com/ninja-build/ninja/tar.gz/refs/tags/v1.12.1",
+        "sha256": "821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a"
+      }
+    },
+    "curl": {
+      "version": "8.10.1",
+      "source": {
+        "url": "https://curl.se/download/curl-8.10.1.tar.xz",
+        "sha256": "73a4b0e99596a09fa5924a4fb7e4b995a85fda0d18a2c02ab9cf134bebce04ee"
+      }
+    },
+    "git": {
+      "version": "2.33.0",
+      "source": {
+        "url": "https://www.kernel.org/pub/software/scm/git/git-2.33.0.tar.xz",
+        "sha256": "bf3c6ab5f82e072aad4768f647cfb1ef60aece39855f83f080f9c0222dd20c4f"
+      }
+    },
+    "unzip": {
+      "version": "6.0",
+      "source": {
+        "url": "https://downloads.sourceforge.net/infozip/unzip60.tar.gz",
+        "sha256": "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37"
+      }
+    },
+    "gzip": {
+      "version": "1.12",
+      "source": {
+        "url": "https://ftp.gnu.org/gnu/gzip/gzip-1.12.tar.xz",
+        "sha256": "ce5e03e519f637e1f814011ace35c4f87b33c0bbabeec35baf5fbd3479e91956"
+      }
+    },
+    "tar": {
+      "version": "1.34",
+      "source": {
+        "url": "https://ftp.gnu.org/gnu/tar/tar-1.34.tar.xz",
+        "sha256": "63bebd26879c5e1eea4352f0d03c991f966aeb3ddeb3c7445c902568d5411d28"
+      }
+    },
+    "cmake": {
+      "version": "3.31.8",
+      "source": {
+        "url": "https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8.tar.gz",
+        "sha256": "e3cde3ca83dc2d3212105326b8f1b565116be808394384007e7ef1c253af6caa"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-linux-x86_64.tar.gz",
+          "sha256": "630615d8e98ac33eba7fbe472626dff5c899c85af3c024585ae109166a6909d0"
+        },
+        "aarch64": {
+          "url": "https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-linux-aarch64.tar.gz",
+          "sha256": "609735983e3bdf24b6ab379d918458d64196fe72b98226f62dd5e9fe7b2997cc"
+        }
+      }
+    },
+    "pcre2": {
+      "version": "10.45",
+      "source": {
+        "url": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2",
+        "sha256": "21547f3516120c75597e5b30a992e27a592a31950b5140e7b8bfde3f192033c4"
+      }
+    },
+    "swig": {
+      "version": "4.3.1",
+      "source": {
+        "url": "https://downloads.sourceforge.net/swig/swig-4.3.1.tar.gz",
+        "sha256": "44fc829f70f1e17d635a2b4d69acab38896699ecc24aa023e516e0eabbec61b8"
+      }
+    },
+    "clangd": {
+      "version": "22.1.6",
+      "source": {
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.6/llvm-project-22.1.6.src.tar.xz",
+        "sha256": "6e0b376a1f6d9873e7dfb09ae6e04b9c7024400f01733fa4c29be69d5c138bc2"
+      },
+      "binaries": {
+        "x86_64": {
+          "url": "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-linux-22.1.6.zip",
+          "sha256": "a9c77443af2e447ed467e84771848d3a6ac1c56f84bcfcde717e66318de77cfa"
+        }
+      }
+    },
+    "lldb": {
+      "version": "22.1.8",
+      "source": {
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz",
+        "sha256": "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
+      }
+    },
+    "rust": {
+      "version": "1.91.0",
+      "build_only": true,
+      "binaries": {
+        "x86_64": {
+          "url": "https://static.rust-lang.org/dist/2025-10-30/rust-1.91.0-x86_64-unknown-linux-gnu.tar.xz",
+          "sha256": "5bea12c1911dda5c0a91cee4e9b617a65bcf23a21e2852a17b544936de1f83e3"
+        },
+        "aarch64": {
+          "url": "https://static.rust-lang.org/dist/2025-10-30/rust-1.91.0-aarch64-unknown-linux-gnu.tar.xz",
+          "sha256": "62b2b7aeba3a629783263742fc50e7a097349f8dd2d7cdf394ab2723a6b3c7ee"
+        }
+      }
+    },
+    "node": {
+      "version": "22.14.0",
+      "build_only": true,
+      "binaries": {
+        "x86_64": {
+          "url": "https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.xz",
+          "sha256": "69b09dba5c8dcb05c4e4273a4340db1005abeafe3927efda2bc5b249e80437ec"
+        },
+        "aarch64": {
+          "url": "https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-arm64.tar.xz",
+          "sha256": "08bfbf538bad0e8cbb0269f0173cca28d705874a67a22f60b57d99dc99e30050"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "AstroNvim",
+      "url": "https://github.com/AstroNvim/AstroNvim.git",
+      "commit": "aa0545fc8357009fc8a67e6cd93e7f8544e3aba9",
+      "patch": "patches/AstroNvim.patch",
+      "patch_sha256": "755274f4bc31abb22421629599910c5e060214cb5fd0d0262b5ba0bffefee079",
+      "files": {
+        "lua/astronvim/plugins/toggleterm.lua": {
+          "before": "6e56a18d7c5a0bae39e5fa9bd883951c77c29b23bd909ff7c2209009d57870a4",
+          "after": "ff686f3bbbd5dd0244421269d6fe4dcbdf67b7d6912e0dbd013dd0ce2a8949ff"
+        }
+      }
+    },
+    {
+      "name": "LuaSnip",
+      "url": "https://github.com/L3MON4D3/LuaSnip.git",
+      "commit": "642b0c595e11608b4c18219e93b88d7637af27bc"
+    },
+    {
+      "name": "aerial.nvim",
+      "url": "https://github.com/stevearc/aerial.nvim.git",
+      "commit": "645d108a5242ec7b378cbe643eb6d04d4223f034"
+    },
+    {
+      "name": "astrocore",
+      "url": "https://github.com/AstroNvim/astrocore.git",
+      "commit": "4977992a80f1279afad77eec9fcf94680e1468f8"
+    },
+    {
+      "name": "astrolsp",
+      "url": "https://github.com/AstroNvim/astrolsp.git",
+      "commit": "0ca1ed9a2536c9eaf78d5f3e7b92bda0dbd404eb"
+    },
+    {
+      "name": "astrotheme",
+      "url": "https://github.com/AstroNvim/astrotheme.git",
+      "commit": "744e520fcb300980a4e5ea32c508128c790ecc73"
+    },
+    {
+      "name": "astroui",
+      "url": "https://github.com/AstroNvim/astroui.git",
+      "commit": "9a797715484a6e68fc32bdd4c81cb1246f72139f",
+      "patch": "patches/astroui.patch",
+      "patch_sha256": "2aa6da143e626b5c3a9f0c3121ffa69db2672991028abe9de24f0722d34d8058",
+      "files": {
+        "lua/astroui/folding.lua": {
+          "before": "64934d7e96a92ebb8e3118f279398ccce615aa45fc4c6dd3dec7acaedffbf2fe",
+          "after": "9e433daea96368a94b744c9425464198f677a774dfc35f3124a547e8b6d639d8"
+        }
+      }
+    },
+    {
+      "name": "blink.cmp",
+      "url": "https://github.com/saghen/blink.cmp.git",
+      "commit": "78336bc89ee5365633bcf754d93df01678b5c08f"
+    },
+    {
+      "name": "blink.compat",
+      "url": "https://github.com/saghen/blink.compat.git",
+      "commit": "2ed6d9a28b07fa6f3bface818470605f8896408c"
+    },
+    {
+      "name": "cmp-dap",
+      "url": "https://github.com/rcarriga/cmp-dap.git",
+      "commit": "ea92773e84c0ad3288c3bc5e452ac91559669087"
+    },
+    {
+      "name": "friendly-snippets",
+      "url": "https://github.com/rafamadriz/friendly-snippets.git",
+      "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9"
+    },
+    {
+      "name": "gitsigns.nvim",
+      "url": "https://github.com/lewis6991/gitsigns.nvim.git",
+      "commit": "a462f416e2ce4744531c6256252dee99a7d34a83"
+    },
+    {
+      "name": "guess-indent.nvim",
+      "url": "https://github.com/NMAC427/guess-indent.nvim.git",
+      "commit": "84a4987ff36798c2fc1169cbaff67960aed9776f"
+    },
+    {
+      "name": "heirline.nvim",
+      "url": "https://github.com/rebelot/heirline.nvim.git",
+      "commit": "fae936abb5e0345b85c3a03ecf38525b0828b992"
+    },
+    {
+      "name": "lazy.nvim",
+      "url": "https://github.com/folke/lazy.nvim.git",
+      "commit": "85c7ff3711b730b4030d03144f6db6375044ae82"
+    },
+    {
+      "name": "mini.icons",
+      "url": "https://github.com/nvim-mini/mini.icons.git",
+      "commit": "ff2e4f1d29f659cc2bad0f9256f2f6195c6b2428"
+    },
+    {
+      "name": "neo-tree.nvim",
+      "url": "https://github.com/nvim-neo-tree/neo-tree.nvim.git",
+      "commit": "f3f3bf73414e400cf9fc13fda50f00404a8f8ab1",
+      "patch": "patches/neo-tree.nvim.patch",
+      "patch_sha256": "574188b50fcaa050da9472d712b066a0ae062339d6ad2097fdc6b7f718138a9c",
+      "files": {
+        "lua/neo-tree/git/ls-files.lua": {
+          "before": "7528763fcb050397c21e13be8f1a897c6d7455a87e84ea1a2d2eb7ae53be3128",
+          "after": "abe4b559b465ed0e9a307c869273ef9f835c79f9272c5383ce3f92ad5b141c75"
+        },
+        "lua/neo-tree/setup/init.lua": {
+          "before": "562bf9a94d936bcbb9f9705bdc5bcaa25f9c6dc15dbc45eb1144a2ecacbc35d9",
+          "after": "056a9a1379d396a4b0c384e3c7128631bc07c9fec90a758cafa75732168e6439"
+        },
+        "lua/neo-tree/sources/filesystem/init.lua": {
+          "before": "d2e27711b988f3b1cc5237ba47c30ec88c70dd7a467662eb6d2fb9cf43da26c7",
+          "after": "984b0afbf8e251ea43e746ef866e228252bdc7138a5bd0cc764b7758c8e20f5c"
+        },
+        "lua/neo-tree/sources/filesystem/lib/fs_scan.lua": {
+          "before": "b0bf0f368fe95d7485f1830a8a653a74db606facee83916f357e658717e682c1",
+          "after": "13b0b0c36c36f9953283461b331ba9628e135e279a3feb0936a983e5330ed261"
+        },
+        "lua/neo-tree/ui/renderer.lua": {
+          "before": "dd83faa10b66d498f3405ed6067b03d498462861f64df98ffa0ad0414fb7de57",
+          "after": "a531d4194a18a39e626b43a1e527e6dbd5d7f080e735889c8318d705d9c67931"
+        },
+        "lua/neo-tree/utils/init.lua": {
+          "before": "e4ad1cca9aba2e6b815e635a36c7aa251db4ce4901b38153fcf1ed4046b8052c",
+          "after": "1b72a96bbe113e2a27723616817109c221f31e247122f728285f9f692d49f388"
+        }
+      }
+    },
+    {
+      "name": "nui.nvim",
+      "url": "https://github.com/MunifTanjim/nui.nvim.git",
+      "commit": "f535005e6ad1016383f24e39559833759453564e"
+    },
+    {
+      "name": "nvim-autopairs",
+      "url": "https://github.com/windwp/nvim-autopairs.git",
+      "commit": "7b9923abad60b903ece7c52940e1321d39eccc79"
+    },
+    {
+      "name": "nvim-dap",
+      "url": "https://github.com/mfussenegger/nvim-dap.git",
+      "commit": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
+      "patch": "patches/nvim-dap.patch",
+      "patch_sha256": "64a027dd91062d7bf0b8ca7ff099e80edfabc2adf3a1079212adbf180ddee3a1",
+      "files": {
+        "lua/dap/session.lua": {
+          "before": "03ff2f66e200ca15b2cf557dba00003e27d3e6a3661aec4577badbc4f349fc7f",
+          "after": "8a5b1a17a9d284fb718c80dd6906286a29f95a78b37375a0392da47eb90cfd3c"
+        }
+      }
+    },
+    {
+      "name": "nvim-dap-ui",
+      "url": "https://github.com/rcarriga/nvim-dap-ui.git",
+      "commit": "cc9dd33aade7f20bae414d0cba163bc60d4d4b43",
+      "patch": "patches/nvim-dap-ui.patch",
+      "patch_sha256": "868f41c65631070d67666e713c86aa1551c76442fc62bce835f2ad2302336c7c",
+      "files": {
+        "lua/dapui/client/init.lua": {
+          "before": "96a5e5084044ab44bc1a7461d78dab0eda21e0f2b3ab55dccdffff92b6970ace",
+          "after": "f92cb87d130d8ba6f8dbadceaaaa507000d15f8efac322e0201e9ab532c481ef"
+        },
+        "lua/dapui/components/threads.lua": {
+          "before": "d15240b984b324c311d44c5c773acedce1e31c5a20521963577e1546c41ae228",
+          "after": "7f8580241a2564d79f6a9b7fe657706adbdaff5cfd4511c9ff89ab90292d1718"
+        },
+        "lua/dapui/elements/scopes.lua": {
+          "before": "936767938842dfba18aafcc73b6f459ab3f1e18433fd491025c17ab11fe9877c",
+          "after": "2886c6a85592cee0b912dac5f12dfddedf3642d86d92efd4553889b148a1e6c9"
+        },
+        "lua/dapui/elements/stacks.lua": {
+          "before": "0b8bdd319e4ee4a7a7442ec112716f16d8377c56e7726bf6e03276f6a72c3181",
+          "after": "9b6308f775ecc4c7a77247fddf5712ae798c663393e383856043b556e6adae78"
+        },
+        "lua/dapui/elements/watches.lua": {
+          "before": "350224a135770e840c47279cee1fd55fbf27e76ef501fee95eb6eda137547b7b",
+          "after": "f3fff3fa4271a09d711acc4a85cc3d7f1b16f4d2d1a1523957acfa533225a18b"
+        },
+        "lua/dapui/render/canvas.lua": {
+          "before": "84160c2a8525992a8d8838f5f4f9310b60339df10f8c293f8cd35b0bead5a8a2",
+          "after": "263495451cc0ca1c820fec42ee66552e31fed52c696f788db08b8335fe4ca125"
+        },
+        "lua/dapui/windows/layout.lua": {
+          "before": "b0ba5d975efeb5d21f62fdfad2e4b2177a7b53b662c1b25508d58fc0c2085e37",
+          "after": "4adffb75bd4d557628bb6a44cc952395aed61f4cff3337c67af0c760b4714b86"
+        },
+        "lua/dapui/client/reads.lua": {
+          "before": null,
+          "after": "a31cc2d7d41cf2bc384854f77c5bfe370348ca31f57103e8d3f9e64d05c8dce7"
+        }
+      }
+    },
+    {
+      "name": "nvim-highlight-colors",
+      "url": "https://github.com/brenoprata10/nvim-highlight-colors.git",
+      "commit": "e4c7af0211866162d999ce0bdd6a029302e19139"
+    },
+    {
+      "name": "nvim-lspconfig",
+      "url": "https://github.com/neovim/nvim-lspconfig.git",
+      "commit": "4d363f93c3581b9212a24f7a830d7590b3f050af"
+    },
+    {
+      "name": "nvim-nio",
+      "url": "https://github.com/nvim-neotest/nvim-nio.git",
+      "commit": "21f5324bfac14e22ba26553caf69ec76ae8a7662"
+    },
+    {
+      "name": "nvim-treesitter",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter.git",
+      "commit": "61df84986b4b4ec469ee745a182e433d49f8c27e"
+    },
+    {
+      "name": "nvim-treesitter-textobjects",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git",
+      "commit": "898ee307df58f854d11cd7edd06472574d48014e"
+    },
+    {
+      "name": "nvim-window-picker",
+      "url": "https://github.com/s1n7ax/nvim-window-picker.git",
+      "commit": "6382540b2ae5de6c793d4aa2e3fe6dbb518505ec"
+    },
+    {
+      "name": "plenary.nvim",
+      "url": "https://github.com/nvim-lua/plenary.nvim.git",
+      "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b"
+    },
+    {
+      "name": "resession.nvim",
+      "url": "https://github.com/stevearc/resession.nvim.git",
+      "commit": "cc819b0489938d03e4f3532a583354f0287c015b"
+    },
+    {
+      "name": "smart-splits.nvim",
+      "url": "https://github.com/mrjones2014/smart-splits.nvim.git",
+      "commit": "32f67888ac71942442fdab3819864a10449dfc41"
+    },
+    {
+      "name": "snacks.nvim",
+      "url": "https://github.com/folke/snacks.nvim.git",
+      "commit": "e6fd58c82f2f3fcddd3fe81703d47d6d48fc7b9f",
+      "patch": "patches/snacks.nvim.patch",
+      "patch_sha256": "b21a491c03e865acfa82992d5142b762cdc9a0efc8ae8202086cd60d6f1d8372",
+      "files": {
+        "lua/snacks/layout.lua": {
+          "before": "d7b74bfb4826ffda33ff1f8bea455ba87dd98664bde37f492ef2bc4a6aafb673",
+          "after": "506792fb79587b0580ffe09536f663fd48989ee015ef7248cb17711897afb6a4"
+        },
+        "lua/snacks/picker/core/input.lua": {
+          "before": "ea4864afa885b6541c4015c28be9b83a1b058539a70d3d4050ae6175cda16cb6",
+          "after": "93e77a3273e54ad189d9affb5fd96d2a761cef784b4cf9e59a2bc2ce190eecb6"
+        }
+      }
+    },
+    {
+      "name": "todo-comments.nvim",
+      "url": "https://github.com/folke/todo-comments.nvim.git",
+      "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668"
+    },
+    {
+      "name": "toggleterm.nvim",
+      "url": "https://github.com/akinsho/toggleterm.nvim.git",
+      "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c"
+    },
+    {
+      "name": "vscode.nvim",
+      "url": "https://github.com/Mofiqul/vscode.nvim.git",
+      "commit": "6439ed89d0e10193f07e92268a321d7c6f6e93ee"
+    },
+    {
+      "name": "which-key.nvim",
+      "url": "https://github.com/folke/which-key.nvim.git",
+      "commit": "fcbf4eea17cb299c02557d576f0d568878e354a4"
+    }
+  ],
+  "parsers": [
+    {
+      "name": "json",
+      "url": "https://github.com/tree-sitter/tree-sitter-json.git",
+      "commit": "001c28d7a29832b06b0e831ec77845553c89b56d",
+      "directory": "."
+    },
+    {
+      "name": "markdown_inline",
+      "url": "https://github.com/tree-sitter-grammars/tree-sitter-markdown.git",
+      "commit": "a0a00f817d02412bd92c54d316f164d827b57b5c",
+      "directory": "tree-sitter-markdown-inline"
+    },
+    {
+      "name": "vimdoc",
+      "url": "https://github.com/neovim/tree-sitter-vimdoc.git",
+      "commit": "23daa416c1ff5d15f59a1aa648f031d6e3ee15c5",
+      "directory": "."
+    },
+    {
+      "name": "markdown",
+      "url": "https://github.com/tree-sitter-grammars/tree-sitter-markdown.git",
+      "commit": "a0a00f817d02412bd92c54d316f164d827b57b5c",
+      "directory": "tree-sitter-markdown"
+    },
+    {
+      "name": "c",
+      "url": "https://github.com/tree-sitter/tree-sitter-c.git",
+      "commit": "b780e47fc780ddc8da13afa35a3f4ed5c157823d",
+      "directory": "."
+    },
+    {
+      "name": "vim",
+      "url": "https://github.com/tree-sitter-grammars/tree-sitter-vim.git",
+      "commit": "039c8d0aa1deae00ddeb0374dd70bcc0ec56938d",
+      "directory": "."
+    },
+    {
+      "name": "query",
+      "url": "https://github.com/tree-sitter-grammars/tree-sitter-query.git",
+      "commit": "8e9e223812ff30854fbc912adbec696ba5f0e023",
+      "directory": "."
+    },
+    {
+      "name": "lua",
+      "url": "https://github.com/tree-sitter-grammars/tree-sitter-lua.git",
+      "commit": "10fe0054734eec83049514ea2e718b2a56acd0c9",
+      "directory": "."
+    },
+    {
+      "name": "cpp",
+      "url": "https://github.com/tree-sitter/tree-sitter-cpp.git",
+      "commit": "8b5b49eb196bec7040441bee33b2c9a4838d6967",
+      "directory": "."
+    },
+    {
+      "name": "bash",
+      "url": "https://github.com/tree-sitter/tree-sitter-bash.git",
+      "commit": "a06c2e4415e9bc0346c6b86d401879ffb44058f7",
+      "directory": "."
+    }
+  ]
+}

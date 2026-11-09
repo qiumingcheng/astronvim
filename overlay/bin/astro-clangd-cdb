@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve the same directory without a separate dirname process.
+case ${BASH_SOURCE[0]} in
+  */*) SELF_DIR=${BASH_SOURCE[0]%/*}; SELF_DIR=${SELF_DIR:-/} ;;
+  *) SELF_DIR=. ;;
+esac
+SELF_DIR=$(CDPATH= cd -- "$SELF_DIR" && pwd -P)
+EXPECTED_ROOT=$(CDPATH= cd -- "$SELF_DIR/.." && pwd -P)
+if [[ ${ASTRONVIM_ROOT:-} != "$EXPECTED_ROOT" || ${XDG_CONFIG_HOME:-} != "$EXPECTED_ROOT/config" ]]; then
+  printf '请先执行: source %q/env.sh\n' "$EXPECTED_ROOT" >&2
+  exit 1
+fi
+
+if [[ $# -gt 1 ]]; then
+  cat >&2 <<'EOF'
+用法: astro-clangd-cdb [openGauss源码目录]
+
+在已配置的 openGauss 源码树中生成 compile_commands.json。
+只执行 make -n（干运行）和 Bear parse-sh，不会编译、安装或启动数据库。
+默认使用当前目录；可用 JOBS=N 调整 make 的并行度。
+EOF
+  exit 2
+fi
+if [[ ${1:-} == '-h' || ${1:-} == '--help' ]]; then
+  cat <<'EOF'
+用法: astro-clangd-cdb [openGauss源码目录]
+
+在已配置的 openGauss 源码树中生成 compile_commands.json。
+只执行 make -n（干运行）和 Bear parse-sh，不会编译、安装或启动数据库。
+默认使用当前目录；可用 JOBS=N 调整 make 的并行度。
+EOF
+  exit 0
+fi
+
+PROJECT=${1:-$PWD}
+if ! PROJECT=$(CDPATH= cd -- "$PROJECT" && pwd -P); then
+  printf '项目目录不存在: %s\n' "$PROJECT" >&2
+  exit 1
+fi
+if [[ ! -f "$PROJECT/Makefile" || ! -f "$PROJECT/config.status" ]]; then
+  printf '这不是已配置的 openGauss 源码树（缺少 Makefile 或 config.status）: %s\n' "$PROJECT" >&2
+  exit 1
+fi
+
+JOBS=${JOBS:-4}
+if [[ ! $JOBS =~ ^[1-9][0-9]*$ ]]; then
+  printf 'JOBS 必须是正整数，当前为: %s\n' "$JOBS" >&2
+  exit 1
+fi
+
+# Keep clangd's command database aligned with the compiler selected by the
+# openGauss configure step. The path can be overridden for another checkout or
+# another host; the configured third-party directory is used when available.
+# Stop sed after its first match; avoid a separate head process.
+THIRD_PARTY=$(sed -n 's/^S\["with_3rdpartydir"\]="\(.*\)"$/\1/p; t found; b; :found; q' "$PROJECT/config.status")
+OPENGAUSS_CXX=${OPENGAUSS_CXX:-}
+OPENGAUSS_CC=${OPENGAUSS_CC:-}
+if [[ -z "$OPENGAUSS_CXX" && -n "$THIRD_PARTY" && -x "$THIRD_PARTY/buildtools/gcc10.3/gcc/bin/g++" ]]; then
+  OPENGAUSS_CXX="$THIRD_PARTY/buildtools/gcc10.3/gcc/bin/g++"
+fi
+if [[ -z "$OPENGAUSS_CC" && -n "$THIRD_PARTY" && -x "$THIRD_PARTY/buildtools/gcc10.3/gcc/bin/gcc" ]]; then
+  OPENGAUSS_CC="$THIRD_PARTY/buildtools/gcc10.3/gcc/bin/gcc"
+fi
+MAKE_TOOL_ARGS=()
+[[ -n "$OPENGAUSS_CXX" ]] && MAKE_TOOL_ARGS+=("CXX=$OPENGAUSS_CXX")
+[[ -n "$OPENGAUSS_CC" ]] && MAKE_TOOL_ARGS+=("CC=$OPENGAUSS_CC")
+if ((${#MAKE_TOOL_ARGS[@]})); then
+  printf '编译器: %s\n' "${OPENGAUSS_CXX:-${OPENGAUSS_CC:-系统默认}}"
+else
+  printf '编译器: 系统默认（可用 OPENGAUSS_CXX/OPENGAUSS_CC 覆盖）\n'
+fi
+
+OUT="$PROJECT/compile_commands.json"
+# Keep the generated file on the destination filesystem for atomic replacement.
+# Failed generation must leave an existing database byte-for-byte unchanged.
+WORK=$(mktemp -d "$PROJECT/.astro-clangd-cdb.XXXXXX")
+trap 'rm -rf -- "$WORK"' EXIT
+DRY_RUN="$WORK/make-dry-run.txt"
+GENERATED="$WORK/compile_commands.json"
+
+printf '项目: %s\n' "$PROJECT"
+printf '生成全量编译命令（make -n，JOBS=%s）...\n' "$JOBS"
+
+# The normal dry-run covers generated targets and objects that are currently stale.
+# The per-directory pass adds commands for every existing C/C++ source, including
+# sources whose object file is already up to date. -W marks only that source as
+# newer, so it does not force configure or execute a compiler.
+set +e
+(
+  cd -- "$PROJECT"
+  make -n -j"$JOBS" "${MAKE_TOOL_ARGS[@]}" all
+) >"$DRY_RUN" 2>"$WORK/make-top.stderr"
+TOP_STATUS=$?
+
+FAILURES=0
+while IFS= read -r DIR; do
+  [[ -f "$DIR/Makefile" ]] || continue
+  REL=${DIR#"$PROJECT"/}
+  NAMES=()
+  while IFS= read -r NAME; do
+    NAMES+=("$NAME")
+  done < <(find "$DIR" -maxdepth 1 -type f \( -name '*.c' -o -name '*.cc' -o -name '*.cpp' -o -name '*.cxx' \) -printf '%f\n' | sort)
+  ((${#NAMES[@]})) || continue
+  WARN_ARGS=()
+  for NAME in "${NAMES[@]}"; do
+    WARN_ARGS+=( -W "$NAME" )
+  done
+  (
+    cd -- "$PROJECT"
+    make -n -j"$JOBS" -C "$REL" "${MAKE_TOOL_ARGS[@]}" "${WARN_ARGS[@]}" all
+  ) >>"$DRY_RUN" 2>>"$WORK/make-sub.stderr"
+  STATUS=$?
+  ((STATUS == 0)) || ((FAILURES++))
+done < <(find "$PROJECT/src" "$PROJECT/contrib" -type f \( -name '*.c' -o -name '*.cc' -o -name '*.cpp' -o -name '*.cxx' \) -printf '%h\n' 2>/dev/null | sort -u)
+set -e
+
+if ((TOP_STATUS != 0)); then
+  printf '提示：顶层 make -n 返回 %s，仍继续使用子目录命令。\n' "$TOP_STATUS" >&2
+fi
+if ((FAILURES != 0)); then
+  printf '提示：%s 个子目录的 make -n 未成功，已保留其余编译命令。\n' "$FAILURES" >&2
+fi
+
+printf '解析编译数据库...\n'
+"$ASTRONVIM_ROOT/bin/bear" parse-sh \
+  --input "$DRY_RUN" \
+  --output "$GENERATED" \
+  --directory "$PROJECT" \
+  2>"$WORK/bear.stderr"
+
+if [[ ! -s "$GENERATED" ]]; then
+  printf 'Bear 未生成有效文件: %s\n' "$GENERATED" >&2
+  exit 1
+fi
+# Bear has successfully serialized its own compilation-command objects. Check
+# for its nonempty array without launching another process or decoding the full
+# database again (the latter scales with project size).
+CDB_PREFIX=""
+while IFS= read -r -n 1 CDB_CHAR; do
+  case "$CDB_CHAR" in ''|[[:space:]]) continue ;; esac
+  CDB_PREFIX+="$CDB_CHAR"
+  ((${#CDB_PREFIX} < 2)) || break
+done < "$GENERATED"
+if [[ "$CDB_PREFIX" != '[{' ]]; then
+  printf '未生成有效的编译命令，保留原有 compile_commands.json。请检查项目配置和 make -n 输出。\n' >&2
+  exit 1
+fi
+if [[ -e "$OUT" ]]; then
+  # Bash >= 4.2 formats the timestamp in-process. Keep older Bash compatible.
+  if ! printf -v BACKUP_STAMP '%(%Y%m%d_%H%M%S)T' -1 2>/dev/null; then
+    BACKUP_STAMP=$(date +%Y%m%d_%H%M%S)
+  fi
+  BACKUP=$(mktemp "$OUT.bak.$BACKUP_STAMP.XXXXXX")
+  cp -a -- "$OUT" "$BACKUP"
+  printf '已备份原有数据库: %s\n' "$BACKUP"
+fi
+mv -- "$GENERATED" "$OUT"
+
+printf '已生成: %s\n' "$OUT"
+printf 'clangd 重新加载：在 AstroNvim 中执行 :LspRestart，然后再进行跳转。\n'
+if [[ -s "$WORK/make-top.stderr" || -s "$WORK/make-sub.stderr" ]]; then
+  printf 'make 提示已省略；如需查看，可重新运行并检查终端输出。\n'
+fi

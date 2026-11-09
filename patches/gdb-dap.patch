@@ -1,0 +1,35 @@
+--- a/opt/gdb/share/gdb/python/gdb/dap/breakpoint.py
++++ b/opt/gdb/share/gdb/python/gdb/dap/breakpoint.py
+@@ -170,9 +170,10 @@
+             # report these as an "unverified" breakpoint.
+             bp = None
+             try:
+-                if keyspec in saved_map:
+-                    bp = saved_map.pop(keyspec)
+-                else:
++                # Native REPL commands can delete an otherwise reusable
++                # breakpoint.  Recreate it rather than reading invalid state.
++                bp = saved_map.pop(keyspec, None)
++                if bp is None or not bp.is_valid():
+                     bp = creator(**spec)
+ 
+                 bp.condition = condition
+@@ -193,7 +194,7 @@
+                 log_stack(LogLevel.FULL)
+                 # Maybe the breakpoint was made but setting an attribute
+                 # failed.  We still want this to fail.
+-                if bp is not None:
++                if bp is not None and bp.is_valid():
+                     bp.delete()
+                 # Breakpoint creation failed.
+                 result.append(
+@@ -206,7 +207,8 @@
+ 
+         # Delete any breakpoints that were not reused.
+         for entry in saved_map.values():
+-            entry.delete()
++            if entry.is_valid():
++                entry.delete()
+     return result
+ 
+ 

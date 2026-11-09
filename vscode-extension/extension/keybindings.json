@@ -1,0 +1,4623 @@
+[
+  {
+    "key": "f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;1u"
+    }
+  },
+  {
+    "key": "f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;1u"
+    }
+  },
+  {
+    "key": "f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;1u"
+    }
+  },
+  {
+    "key": "f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;1u"
+    }
+  },
+  {
+    "key": "f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;1u"
+    }
+  },
+  {
+    "key": "f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;1u"
+    }
+  },
+  {
+    "key": "f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;1u"
+    }
+  },
+  {
+    "key": "f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;1u"
+    }
+  },
+  {
+    "key": "f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;1u"
+    }
+  },
+  {
+    "key": "f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;1u"
+    }
+  },
+  {
+    "key": "f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;1u"
+    }
+  },
+  {
+    "key": "f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;1u"
+    }
+  },
+  {
+    "key": "f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;1u"
+    }
+  },
+  {
+    "key": "f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;1u"
+    }
+  },
+  {
+    "key": "f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;1u"
+    }
+  },
+  {
+    "key": "f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;1u"
+    }
+  },
+  {
+    "key": "f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;1u"
+    }
+  },
+  {
+    "key": "f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;1u"
+    }
+  },
+  {
+    "key": "f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;1u"
+    }
+  },
+  {
+    "key": "f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;1u"
+    }
+  },
+  {
+    "key": "f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;1u"
+    }
+  },
+  {
+    "key": "f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;1u"
+    }
+  },
+  {
+    "key": "f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;1u"
+    }
+  },
+  {
+    "key": "f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;1u"
+    }
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;2u"
+    }
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;2u"
+    }
+  },
+  {
+    "key": "shift+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;2u"
+    }
+  },
+  {
+    "key": "shift+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;2u"
+    }
+  },
+  {
+    "key": "shift+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;2u"
+    }
+  },
+  {
+    "key": "shift+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;2u"
+    }
+  },
+  {
+    "key": "shift+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57350;2u"
+    }
+  },
+  {
+    "key": "shift+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57351;2u"
+    }
+  },
+  {
+    "key": "shift+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;2u"
+    }
+  },
+  {
+    "key": "shift+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;2u"
+    }
+  },
+  {
+    "key": "shift+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;2u"
+    }
+  },
+  {
+    "key": "shift+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;2u"
+    }
+  },
+  {
+    "key": "shift+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;2u"
+    }
+  },
+  {
+    "key": "shift+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;2u"
+    }
+  },
+  {
+    "key": "shift+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;2u"
+    }
+  },
+  {
+    "key": "shift+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;2u"
+    }
+  },
+  {
+    "key": "shift+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;2u"
+    }
+  },
+  {
+    "key": "shift+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;2u"
+    }
+  },
+  {
+    "key": "shift+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;2u"
+    }
+  },
+  {
+    "key": "shift+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;2u"
+    }
+  },
+  {
+    "key": "shift+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;2u"
+    }
+  },
+  {
+    "key": "shift+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;2u"
+    }
+  },
+  {
+    "key": "shift+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;2u"
+    }
+  },
+  {
+    "key": "shift+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;2u"
+    }
+  },
+  {
+    "key": "shift+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;2u"
+    }
+  },
+  {
+    "key": "shift+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;2u"
+    }
+  },
+  {
+    "key": "shift+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;2u"
+    }
+  },
+  {
+    "key": "shift+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;2u"
+    }
+  },
+  {
+    "key": "shift+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;2u"
+    }
+  },
+  {
+    "key": "shift+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;2u"
+    }
+  },
+  {
+    "key": "shift+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;2u"
+    }
+  },
+  {
+    "key": "shift+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;2u"
+    }
+  },
+  {
+    "key": "shift+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;2u"
+    }
+  },
+  {
+    "key": "shift+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;2u"
+    }
+  },
+  {
+    "key": "shift+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;2u"
+    }
+  },
+  {
+    "key": "shift+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;2u"
+    }
+  },
+  {
+    "key": "shift+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;2u"
+    }
+  },
+  {
+    "key": "shift+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;2u"
+    }
+  },
+  {
+    "key": "alt+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[97;3u"
+    }
+  },
+  {
+    "key": "alt+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[98;3u"
+    }
+  },
+  {
+    "key": "alt+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[99;3u"
+    }
+  },
+  {
+    "key": "alt+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[100;3u"
+    }
+  },
+  {
+    "key": "alt+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[101;3u"
+    }
+  },
+  {
+    "key": "alt+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[102;3u"
+    }
+  },
+  {
+    "key": "alt+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[103;3u"
+    }
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[104;3u"
+    }
+  },
+  {
+    "key": "alt+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[105;3u"
+    }
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[106;3u"
+    }
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[107;3u"
+    }
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[108;3u"
+    }
+  },
+  {
+    "key": "alt+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[109;3u"
+    }
+  },
+  {
+    "key": "alt+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[110;3u"
+    }
+  },
+  {
+    "key": "alt+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[111;3u"
+    }
+  },
+  {
+    "key": "alt+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[112;3u"
+    }
+  },
+  {
+    "key": "alt+q",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[113;3u"
+    }
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[114;3u"
+    }
+  },
+  {
+    "key": "alt+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[115;3u"
+    }
+  },
+  {
+    "key": "alt+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[116;3u"
+    }
+  },
+  {
+    "key": "alt+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[117;3u"
+    }
+  },
+  {
+    "key": "alt+v",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[118;3u"
+    }
+  },
+  {
+    "key": "alt+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[119;3u"
+    }
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[120;3u"
+    }
+  },
+  {
+    "key": "alt+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[121;3u"
+    }
+  },
+  {
+    "key": "alt+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[122;3u"
+    }
+  },
+  {
+    "key": "alt+0",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[48;3u"
+    }
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[49;3u"
+    }
+  },
+  {
+    "key": "alt+2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[50;3u"
+    }
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[51;3u"
+    }
+  },
+  {
+    "key": "alt+4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[52;3u"
+    }
+  },
+  {
+    "key": "alt+5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[53;3u"
+    }
+  },
+  {
+    "key": "alt+6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[54;3u"
+    }
+  },
+  {
+    "key": "alt+7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[55;3u"
+    }
+  },
+  {
+    "key": "alt+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[56;3u"
+    }
+  },
+  {
+    "key": "alt+9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57;3u"
+    }
+  },
+  {
+    "key": "alt+space",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[32;3u"
+    }
+  },
+  {
+    "key": "alt+`",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[96;3u"
+    }
+  },
+  {
+    "key": "alt+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[45;3u"
+    }
+  },
+  {
+    "key": "alt+=",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[61;3u"
+    }
+  },
+  {
+    "key": "alt+[",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[91;3u"
+    }
+  },
+  {
+    "key": "alt+]",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[93;3u"
+    }
+  },
+  {
+    "key": "alt+\\",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[92;3u"
+    }
+  },
+  {
+    "key": "alt+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[59;3u"
+    }
+  },
+  {
+    "key": "alt+'",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[39;3u"
+    }
+  },
+  {
+    "key": "alt+,",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[44;3u"
+    }
+  },
+  {
+    "key": "alt+.",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[46;3u"
+    }
+  },
+  {
+    "key": "alt+/",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[47;3u"
+    }
+  },
+  {
+    "key": "alt+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;3u"
+    }
+  },
+  {
+    "key": "alt+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;3u"
+    }
+  },
+  {
+    "key": "alt+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;3u"
+    }
+  },
+  {
+    "key": "alt+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;3u"
+    }
+  },
+  {
+    "key": "alt+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;3u"
+    }
+  },
+  {
+    "key": "alt+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;3u"
+    }
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[1;3D"
+    }
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[1;3C"
+    }
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;3u"
+    }
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;3u"
+    }
+  },
+  {
+    "key": "alt+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;3u"
+    }
+  },
+  {
+    "key": "alt+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;3u"
+    }
+  },
+  {
+    "key": "alt+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;3u"
+    }
+  },
+  {
+    "key": "alt+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;3u"
+    }
+  },
+  {
+    "key": "alt+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;3u"
+    }
+  },
+  {
+    "key": "alt+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;3u"
+    }
+  },
+  {
+    "key": "alt+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;3u"
+    }
+  },
+  {
+    "key": "alt+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;3u"
+    }
+  },
+  {
+    "key": "alt+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;3u"
+    }
+  },
+  {
+    "key": "alt+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;3u"
+    }
+  },
+  {
+    "key": "alt+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;3u"
+    }
+  },
+  {
+    "key": "alt+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;3u"
+    }
+  },
+  {
+    "key": "alt+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;3u"
+    }
+  },
+  {
+    "key": "alt+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;3u"
+    }
+  },
+  {
+    "key": "alt+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;3u"
+    }
+  },
+  {
+    "key": "alt+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;3u"
+    }
+  },
+  {
+    "key": "alt+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;3u"
+    }
+  },
+  {
+    "key": "alt+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;3u"
+    }
+  },
+  {
+    "key": "alt+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;3u"
+    }
+  },
+  {
+    "key": "alt+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;3u"
+    }
+  },
+  {
+    "key": "alt+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;3u"
+    }
+  },
+  {
+    "key": "alt+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;3u"
+    }
+  },
+  {
+    "key": "alt+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;3u"
+    }
+  },
+  {
+    "key": "alt+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;3u"
+    }
+  },
+  {
+    "key": "alt+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;3u"
+    }
+  },
+  {
+    "key": "alt+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;3u"
+    }
+  },
+  {
+    "key": "alt+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;3u"
+    }
+  },
+  {
+    "key": "alt+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;3u"
+    }
+  },
+  {
+    "key": "alt+shift+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[97;4u"
+    }
+  },
+  {
+    "key": "alt+shift+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[98;4u"
+    }
+  },
+  {
+    "key": "alt+shift+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[99;4u"
+    }
+  },
+  {
+    "key": "alt+shift+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[100;4u"
+    }
+  },
+  {
+    "key": "alt+shift+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[101;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[102;4u"
+    }
+  },
+  {
+    "key": "alt+shift+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[103;4u"
+    }
+  },
+  {
+    "key": "alt+shift+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[104;4u"
+    }
+  },
+  {
+    "key": "alt+shift+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[105;4u"
+    }
+  },
+  {
+    "key": "alt+shift+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[106;4u"
+    }
+  },
+  {
+    "key": "alt+shift+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[107;4u"
+    }
+  },
+  {
+    "key": "alt+shift+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[108;4u"
+    }
+  },
+  {
+    "key": "alt+shift+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[109;4u"
+    }
+  },
+  {
+    "key": "alt+shift+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[110;4u"
+    }
+  },
+  {
+    "key": "alt+shift+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[111;4u"
+    }
+  },
+  {
+    "key": "alt+shift+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[112;4u"
+    }
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[113;4u"
+    }
+  },
+  {
+    "key": "alt+shift+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[114;4u"
+    }
+  },
+  {
+    "key": "alt+shift+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[115;4u"
+    }
+  },
+  {
+    "key": "alt+shift+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[116;4u"
+    }
+  },
+  {
+    "key": "alt+shift+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[117;4u"
+    }
+  },
+  {
+    "key": "alt+shift+v",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[118;4u"
+    }
+  },
+  {
+    "key": "alt+shift+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[119;4u"
+    }
+  },
+  {
+    "key": "alt+shift+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[120;4u"
+    }
+  },
+  {
+    "key": "alt+shift+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[121;4u"
+    }
+  },
+  {
+    "key": "alt+shift+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[122;4u"
+    }
+  },
+  {
+    "key": "alt+shift+0",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[48;4u"
+    }
+  },
+  {
+    "key": "alt+shift+1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[49;4u"
+    }
+  },
+  {
+    "key": "alt+shift+2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[50;4u"
+    }
+  },
+  {
+    "key": "alt+shift+3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[51;4u"
+    }
+  },
+  {
+    "key": "alt+shift+4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[52;4u"
+    }
+  },
+  {
+    "key": "alt+shift+5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[53;4u"
+    }
+  },
+  {
+    "key": "alt+shift+6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[54;4u"
+    }
+  },
+  {
+    "key": "alt+shift+7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[55;4u"
+    }
+  },
+  {
+    "key": "alt+shift+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[56;4u"
+    }
+  },
+  {
+    "key": "alt+shift+9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57;4u"
+    }
+  },
+  {
+    "key": "alt+shift+space",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[32;4u"
+    }
+  },
+  {
+    "key": "alt+shift+`",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[96;4u"
+    }
+  },
+  {
+    "key": "alt+shift+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[45;4u"
+    }
+  },
+  {
+    "key": "alt+shift+=",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[61;4u"
+    }
+  },
+  {
+    "key": "alt+shift+[",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[91;4u"
+    }
+  },
+  {
+    "key": "alt+shift+]",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[93;4u"
+    }
+  },
+  {
+    "key": "alt+shift+\\",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[92;4u"
+    }
+  },
+  {
+    "key": "alt+shift+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[59;4u"
+    }
+  },
+  {
+    "key": "alt+shift+'",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[39;4u"
+    }
+  },
+  {
+    "key": "alt+shift+,",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[44;4u"
+    }
+  },
+  {
+    "key": "alt+shift+.",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[46;4u"
+    }
+  },
+  {
+    "key": "alt+shift+/",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[47;4u"
+    }
+  },
+  {
+    "key": "alt+shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;4u"
+    }
+  },
+  {
+    "key": "alt+shift+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;4u"
+    }
+  },
+  {
+    "key": "alt+shift+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;4u"
+    }
+  },
+  {
+    "key": "alt+shift+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;4u"
+    }
+  },
+  {
+    "key": "alt+shift+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;4u"
+    }
+  },
+  {
+    "key": "alt+shift+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;4u"
+    }
+  },
+  {
+    "key": "alt+shift+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57350;4u"
+    }
+  },
+  {
+    "key": "alt+shift+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57351;4u"
+    }
+  },
+  {
+    "key": "alt+shift+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;4u"
+    }
+  },
+  {
+    "key": "alt+shift+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;4u"
+    }
+  },
+  {
+    "key": "alt+shift+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;4u"
+    }
+  },
+  {
+    "key": "alt+shift+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;4u"
+    }
+  },
+  {
+    "key": "alt+shift+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;4u"
+    }
+  },
+  {
+    "key": "alt+shift+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;4u"
+    }
+  },
+  {
+    "key": "alt+shift+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;4u"
+    }
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[97;5u"
+    }
+  },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[98;5u"
+    }
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[99;5u"
+    }
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[100;5u"
+    }
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[101;5u"
+    }
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[102;5u"
+    }
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[103;5u"
+    }
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[104;5u"
+    }
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[105;5u"
+    }
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[106;5u"
+    }
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[107;5u"
+    }
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[108;5u"
+    }
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[109;5u"
+    }
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[110;5u"
+    }
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[111;5u"
+    }
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[112;5u"
+    }
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[113;5u"
+    }
+  },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[114;5u"
+    }
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[115;5u"
+    }
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[116;5u"
+    }
+  },
+  {
+    "key": "ctrl+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[117;5u"
+    }
+  },
+  {
+    "key": "ctrl+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus && portableAstro.active"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[119;5u"
+    }
+  },
+  {
+    "key": "ctrl+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[120;5u"
+    }
+  },
+  {
+    "key": "ctrl+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[121;5u"
+    }
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[122;5u"
+    }
+  },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[48;5u"
+    }
+  },
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[49;5u"
+    }
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[50;5u"
+    }
+  },
+  {
+    "key": "ctrl+3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[51;5u"
+    }
+  },
+  {
+    "key": "ctrl+4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[52;5u"
+    }
+  },
+  {
+    "key": "ctrl+5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[53;5u"
+    }
+  },
+  {
+    "key": "ctrl+6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[54;5u"
+    }
+  },
+  {
+    "key": "ctrl+7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[55;5u"
+    }
+  },
+  {
+    "key": "ctrl+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[56;5u"
+    }
+  },
+  {
+    "key": "ctrl+9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57;5u"
+    }
+  },
+  {
+    "key": "ctrl+space",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[32;5u"
+    }
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[96;5u"
+    }
+  },
+  {
+    "key": "ctrl+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[45;5u"
+    }
+  },
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[61;5u"
+    }
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[91;5u"
+    }
+  },
+  {
+    "key": "ctrl+]",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[93;5u"
+    }
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[92;5u"
+    }
+  },
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[59;5u"
+    }
+  },
+  {
+    "key": "ctrl+'",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[39;5u"
+    }
+  },
+  {
+    "key": "ctrl+,",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[44;5u"
+    }
+  },
+  {
+    "key": "ctrl+.",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[46;5u"
+    }
+  },
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[47;5u"
+    }
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;5u"
+    }
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;5u"
+    }
+  },
+  {
+    "key": "ctrl+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;5u"
+    }
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;5u"
+    }
+  },
+  {
+    "key": "ctrl+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;5u"
+    }
+  },
+  {
+    "key": "ctrl+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;5u"
+    }
+  },
+  {
+    "key": "ctrl+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57350;5u"
+    }
+  },
+  {
+    "key": "ctrl+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57351;5u"
+    }
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;5u"
+    }
+  },
+  {
+    "key": "ctrl+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;5u"
+    }
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;5u"
+    }
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;5u"
+    }
+  },
+  {
+    "key": "ctrl+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;5u"
+    }
+  },
+  {
+    "key": "ctrl+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;5u"
+    }
+  },
+  {
+    "key": "ctrl+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;5u"
+    }
+  },
+  {
+    "key": "ctrl+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;5u"
+    }
+  },
+  {
+    "key": "ctrl+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;5u"
+    }
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;5u"
+    }
+  },
+  {
+    "key": "ctrl+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;5u"
+    }
+  },
+  {
+    "key": "ctrl+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;5u"
+    }
+  },
+  {
+    "key": "ctrl+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;5u"
+    }
+  },
+  {
+    "key": "ctrl+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;5u"
+    }
+  },
+  {
+    "key": "ctrl+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;5u"
+    }
+  },
+  {
+    "key": "ctrl+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;5u"
+    }
+  },
+  {
+    "key": "ctrl+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;5u"
+    }
+  },
+  {
+    "key": "ctrl+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;5u"
+    }
+  },
+  {
+    "key": "ctrl+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;5u"
+    }
+  },
+  {
+    "key": "ctrl+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;5u"
+    }
+  },
+  {
+    "key": "ctrl+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;5u"
+    }
+  },
+  {
+    "key": "ctrl+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;5u"
+    }
+  },
+  {
+    "key": "ctrl+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;5u"
+    }
+  },
+  {
+    "key": "ctrl+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;5u"
+    }
+  },
+  {
+    "key": "ctrl+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;5u"
+    }
+  },
+  {
+    "key": "ctrl+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;5u"
+    }
+  },
+  {
+    "key": "ctrl+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;5u"
+    }
+  },
+  {
+    "key": "ctrl+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;5u"
+    }
+  },
+  {
+    "key": "ctrl+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;5u"
+    }
+  },
+  {
+    "key": "ctrl+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;5u"
+    }
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[97;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[98;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[99;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[100;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[101;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[102;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[103;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[104;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[105;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[106;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[107;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[108;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[109;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[110;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[111;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[112;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+q",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[113;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[114;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[115;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[116;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[117;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[118;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[119;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[120;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[121;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[122;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[48;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[49;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[50;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[51;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[52;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[53;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[54;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[55;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[56;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+space",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[32;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[96;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[45;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[61;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[91;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+]",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[93;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+\\",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[92;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[59;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+'",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[39;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+,",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[44;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+.",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[46;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+/",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[47;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57350;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57351;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;6u"
+    }
+  },
+  {
+    "key": "ctrl+shift+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;6u"
+    }
+  },
+  {
+    "key": "ctrl+alt+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[97;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[98;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[99;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[100;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[101;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[102;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[103;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[104;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[105;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[106;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[107;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[108;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[109;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[110;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[111;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[112;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+q",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[113;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[114;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[115;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[116;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[117;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[118;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[119;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[120;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[121;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[122;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+0",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[48;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[49;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[50;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[51;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[52;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[53;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[54;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[55;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[56;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+space",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[32;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+`",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[96;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[45;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+=",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[61;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+[",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[91;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+]",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[93;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+\\",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[92;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[59;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+'",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[39;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+,",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[44;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+.",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[46;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+/",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[47;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[1;7D"
+    }
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[1;7C"
+    }
+  },
+  {
+    "key": "ctrl+alt+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;7u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[97;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[98;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[99;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[100;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[101;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[102;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[103;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+h",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[104;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[105;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[106;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[107;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[108;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[109;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[110;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[111;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[112;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+q",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[113;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[114;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[115;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[116;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[117;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+v",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[118;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[119;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[120;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[121;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[122;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+0",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[48;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[49;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[50;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[51;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[52;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[53;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[54;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[55;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[56;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+space",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[32;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+`",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[96;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[45;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+=",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[61;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+[",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[91;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+]",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[93;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+\\",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[92;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[59;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+'",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[39;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+,",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[44;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+.",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[46;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+/",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[47;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[13;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+tab",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[9;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+escape",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[27;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+backspace",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[127;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+insert",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57348;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+delete",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57349;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57350;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57351;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+up",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57352;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+down",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57353;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+pageup",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57354;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+pagedown",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57355;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+home",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57356;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+end",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57357;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f1",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57364;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f2",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57365;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f3",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57366;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f4",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57367;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f5",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57368;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f6",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57369;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f7",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57370;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57371;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f9",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57372;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f10",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57373;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f11",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57374;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f12",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57375;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f13",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57376;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f14",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57377;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f15",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57378;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f16",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57379;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f17",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57380;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f18",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57381;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f19",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57382;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f20",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57383;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f21",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57384;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f22",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57385;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f23",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57386;8u"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+f24",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && portableAstro.active",
+    "args": {
+      "text": "\u001b[57387;8u"
+    }
+  }
+]

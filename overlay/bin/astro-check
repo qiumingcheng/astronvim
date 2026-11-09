@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ -z ${ASTRONVIM_ROOT:-} ]]; then printf '请先 source astronvim/env.sh\n' >&2; exit 1; fi
+printf 'Directory: %s\n' "$ASTRONVIM_ROOT"
+printf 'Platform: %s / %s\n' "$(uname -m)" "$(getconf GNU_LIBC_VERSION)"
+"$ASTRONVIM_ROOT/bin/astronvim" --version | sed -n '1,3p'
+clangd --version | sed -n '1p'
+rg --version | sed -n '1p'
+fd --version
+git --version
+tree-sitter --version
+if [[ ! -x "$ASTRONVIM_ROOT/bin/gdb" ]]; then
+  printf '缺少包内 GDB: %s/bin/gdb\n' "$ASTRONVIM_ROOT" >&2; exit 1
+fi
+"$ASTRONVIM_ROOT/bin/gdb" --version | sed -n '1p'
+"$ASTRONVIM_ROOT/bin/gdb" -q -nx -batch \
+  -ex 'python import gdb, sys, os, encodings, importlib.util; assert gdb.VERSION.startswith("17.2"), gdb.VERSION; root=os.path.realpath(os.environ["ASTRONVIM_ROOT"])+os.sep; assert os.path.realpath(encodings.__file__).startswith(root), encodings.__file__; spec=importlib.util.find_spec("gdb.dap"); assert spec and os.path.realpath(spec.origin).startswith(root), "DAP module is outside package"; print("Bundled GDB 17.2 / Python %s / DAP modules: OK" % sys.version.split()[0])'
+
+ASTRO_CHECK_LUA=$(cat <<'LUA'
+vim.defer_fn(function()
+  local ok, err = xpcall(function()
+    local root = vim.env.ASTRONVIM_ROOT
+    for _, name in ipairs { "rg", "fd", "git", "clangd", "codelldb", "gdb", "tree-sitter" } do
+      assert(vim.fn.exepath(name):find(root .. "/", 1, true) == 1, name .. " is outside package")
+    end
+    for _, name in ipairs { "c", "cpp", "lua", "json" } do
+      assert(vim.treesitter.language.add(name), name .. " parser")
+    end
+    local lazy = require "lazy.core.config"
+    assert(lazy.options.install.missing == false, "Automatic plugin installation is enabled")
+    assert(lazy.options.checker.enabled == false, "Automatic plugin update checks are enabled")
+    local plugins = 0
+    for name, plugin in pairs(lazy.plugins) do
+      assert(plugin._.installed, "Plugin missing from package: " .. name)
+      plugins = plugins + 1
+    end
+    local dap = require "dap"
+    require "dapui"
+    assert(require("gdb_backend").attach_type() == "gdb", "Attach does not select bundled GDB")
+    assert(dap.adapters.gdb, "GDB adapter is not registered")
+    local function request(seq, command, arguments)
+      local body = vim.json.encode { seq = seq, type = "request", command = command, arguments = arguments }
+      return "Content-Length: " .. #body .. "\r\n\r\n" .. body
+    end
+    local stdin = request(1, "initialize", {
+      clientID = "astro-check", adapterID = "gdb", pathFormat = "path",
+      linesStartAt1 = true, columnsStartAt1 = true,
+    }) .. request(2, "disconnect", { terminateDebuggee = false })
+    local result = vim.system({ root .. "/bin/gdb", "-q", "-nx", "--interpreter=dap" },
+      { stdin = stdin, text = false }):wait(15000)
+    assert(result.code == 0, "GDB DAP startup failed: " .. (result.stderr or ""))
+    local output, pos, initialized = result.stdout or "", 1, false
+    while true do
+      local first, last, length = output:find("Content%-Length: (%d+)\r\n\r\n", pos)
+      if not first then break end
+      local message = vim.json.decode(output:sub(last + 1, last + tonumber(length)))
+      if message.type == "response" and message.command == "initialize" and message.success then
+        initialized = true
+      end
+      pos = last + tonumber(length) + 1
+    end
+    assert(initialized, "GDB did not acknowledge DAP initialize: " .. output)
+    print("Portable editor, " .. plugins .. " installed plugins, parsers, GDB attach selection and DAP handshake: OK")
+  end, debug.traceback)
+  if not ok then
+    io.stderr:write(tostring(err) .. "\n")
+    vim.cmd "cquit 1"
+  else
+    vim.cmd "qa!"
+  end
+end, 500)
+LUA
+)
+exec "$ASTRONVIM_ROOT/bin/astronvim" --headless "+lua $ASTRO_CHECK_LUA"

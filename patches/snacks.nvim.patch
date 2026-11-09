@@ -1,0 +1,34 @@
+diff --git a/lua/snacks/layout.lua b/lua/snacks/layout.lua
+index 1c10353..c7c036f 100644
+--- a/lua/snacks/layout.lua
++++ b/lua/snacks/layout.lua
+@@ -138,7 +138,9 @@ function M.new(opts)
+         return self:update()
+       end
+       for _, win in pairs(self.wins) do
+-        if win:win_valid() and vim.tbl_contains(vim.v.event.windows, win.win) then
++        -- An external preview follows the editor, not this split. Its width
++        -- change must not be added back to the sidebar that caused it.
++        if win.layout ~= false and win:win_valid() and vim.tbl_contains(vim.v.event.windows, win.win) then
+           local width_diff = vim.api.nvim_win_get_width(win.win) - win.opts.width
+           local height_diff = vim.api.nvim_win_get_height(win.win) - win.opts.height
+           if width_diff ~= 0 then
+diff --git a/lua/snacks/picker/core/input.lua b/lua/snacks/picker/core/input.lua
+index 03e4eef..e41a3f5 100644
+--- a/lua/snacks/picker/core/input.lua
++++ b/lua/snacks/picker/core/input.lua
+@@ -86,9 +86,12 @@ function M.new(picker)
+         input.filter.pattern = pattern
+       end
+       vim.schedule(function()
+-        input.picker:find({ refresh = false })
++        local picker = input.picker
++        if picker then
++          picker:find({ refresh = false })
++        end
+       end)
+-    end, { ms = picker.opts.live and 200 or 30 }),
++    end, { ms = picker.opts.live and (picker.opts.live_search_delay or 200) or 30 }),
+     { buf = true }
+   )
+   return self

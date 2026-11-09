@@ -1,0 +1,23 @@
+diff --git a/lua/astronvim/plugins/toggleterm.lua b/lua/astronvim/plugins/toggleterm.lua
+index 9bdd401..c5032be 100644
+--- a/lua/astronvim/plugins/toggleterm.lua
++++ b/lua/astronvim/plugins/toggleterm.lua
+@@ -33,14 +33,16 @@ return {
+           maps.n["<Leader>tn"] = { function() astro.toggle_term_cmd "node" end, desc = "ToggleTerm node" }
+         end
+         local gdu = "gdu"
+-        if vim.fn.executable(gdu) ~= 1 then
++        local gdu_available = vim.fn.executable(gdu) == 1
++        if not gdu_available then
+           if vim.fn.has "win32" == 1 then
+             gdu = "gdu_windows_amd64.exe"
+           elseif vim.fn.has "mac" == 1 then
+             gdu = "gdu-go"
+           end
++          if gdu ~= "gdu" then gdu_available = vim.fn.executable(gdu) == 1 end
+         end
+-        if vim.fn.executable(gdu) == 1 then
++        if gdu_available then
+           maps.n["<Leader>tu"] =
+             { function() astro.toggle_term_cmd { cmd = gdu, direction = "float" } end, desc = "ToggleTerm gdu" }
+         end

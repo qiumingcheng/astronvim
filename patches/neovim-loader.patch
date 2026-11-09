@@ -1,0 +1,37 @@
+--- a/opt/nvim/share/nvim/runtime/lua/vim/loader.lua
++++ b/opt/nvim/share/nvim/runtime/lua/vim/loader.lua
+@@ -115,7 +115,7 @@
+ 
+ --- Returns the cache file name
+ --- @param name string can be a module name, or a file name
+---- @return string file_name
++--- @return string? file_name
+ local function cache_filename(name)
+   if is_appimage then
+     -- Avoid cache pollution caused by AppImage randomizing the program root. #31165
+@@ -123,7 +123,16 @@
+     name = name:match('(/usr/.*)') or name
+   end
+ 
+-  local ret = ('%s/%s'):format(M.path, uri_encode(name, 'rfc2396'))
++  local encoded = uri_encode(name, 'rfc2396')
++  -- Portable installations may have long paths (especially with spaces or
++  -- Unicode). Encoding the whole path as one filename can exceed NAME_MAX.
++  if #encoded > 250 then
++    -- sha256 is a Vimscript function, unavailable in a libuv callback. Such a
++    -- first load can still use the source; normal loads retain bytecode caching.
++    if vim.in_fast_event() then return nil end
++    encoded = 'sha256-' .. vim.fn.sha256(name)
++  end
++  local ret = ('%s/%s'):format(M.path, encoded)
+   return ret:sub(-4) == '.lua' and (ret .. 'c') or (ret .. '.luac')
+ end
+ 
+@@ -259,6 +268,7 @@
+   local modpath = normalize(filename)
+   local stat = fs_stat_cached(modpath)
+   local cname = cache_filename(modpath)
++  if not cname then return _loadfile(modpath, mode, env) end
+   if stat then
+     local e_hash, e_chunk = read_cachefile(cname)
+     if hash_eq(e_hash, stat) and e_chunk then

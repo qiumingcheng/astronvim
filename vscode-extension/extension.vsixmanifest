@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+<Metadata><Identity Language="en-US" Id="astronvim-terminal-keys" Version="1.0.9" Publisher="portable-astronvim"/>
+<DisplayName>AstroNvim Terminal Keys</DisplayName><Description xml:space="preserve">Automatically forward terminal shortcuts while portable AstroNvim is running, and restore them on exit.</Description>
+<Tags>terminal,astronvim</Tags><Categories>Other</Categories><GalleryFlags>Public</GalleryFlags>
+<Properties><Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.90.0"/><Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="ui"/></Properties></Metadata>
+<Installation><InstallationTarget Id="Microsoft.VisualStudio.Code"/></Installation><Dependencies/>
+<Assets><Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true"/><Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true"/></Assets>
+</PackageManifest>

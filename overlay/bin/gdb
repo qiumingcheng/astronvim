@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SELF_DIR=$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
+PACKAGE_ROOT=$(CDPATH= cd -- "$SELF_DIR/.." && pwd -P)
+unset PYTHONHOME PYTHONPATH PYTHONUSERBASE PYTHONSTARTUP PYTHONINSPECT PYTHONPLATLIBDIR
+export PYTHONHOME="$PACKAGE_ROOT/opt/python"
+export PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1
+export LD_LIBRARY_PATH="$PACKAGE_ROOT/opt/gdb/lib:$PACKAGE_ROOT/opt/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+exec "$PACKAGE_ROOT/opt/gdb/bin/gdb" --data-directory="$PACKAGE_ROOT/opt/gdb/share/gdb" "$@"

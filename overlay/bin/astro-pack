@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ -z ${ASTRONVIM_ROOT:-} ]]; then printf '请先 source astronvim/env.sh\n' >&2; exit 1; fi
+if (( $# > 1 )); then printf '用法: astro-pack [安装目录之外的输出.tar.gz]\n' >&2; exit 1; fi
+ASTRO_SOURCE=$(realpath -e -- "$ASTRONVIM_ROOT")
+if [[ ! -d "$ASTRO_SOURCE" || ! -f "$ASTRO_SOURCE/env.sh" ]]; then
+  printf '无效的安装目录: %s\n' "$ASTRO_SOURCE" >&2; exit 1
+fi
+if (( $# == 0 )); then
+  if [[ ! -r "$ASTRO_SOURCE/platform-architecture" ]]; then
+    printf '缺少平台元数据: %s/platform-architecture\n' "$ASTRO_SOURCE" >&2; exit 1
+  fi
+  ASTRO_PLATFORM=$(<"$ASTRO_SOURCE/platform-architecture")
+  case "$ASTRO_PLATFORM" in
+    x86_64|aarch64) ;;
+    *) printf '不支持的平台元数据: %s\n' "$ASTRO_PLATFORM" >&2; exit 1 ;;
+  esac
+  ASTRO_ARCHIVE="$PWD/astronvim-linux-$ASTRO_PLATFORM.tar.gz"
+else
+  ASTRO_ARCHIVE=$1
+fi
+if [[ -e "$ASTRO_ARCHIVE" || -L "$ASTRO_ARCHIVE" ]]; then printf '目标文件已存在，请指定新文件名: %s\n' "$ASTRO_ARCHIVE" >&2; exit 1; fi
+ASTRO_ARCHIVE=$(realpath -m -- "$ASTRO_ARCHIVE")
+case "$ASTRO_ARCHIVE" in "$ASTRO_SOURCE"|"$ASTRO_SOURCE"/*) printf '压缩包请放在安装目录之外，避免把压缩包本身装进去。\n' >&2; exit 1;; esac
+if [[ -e "$ASTRO_ARCHIVE" || -L "$ASTRO_ARCHIVE" ]]; then printf '目标文件已存在，请指定新文件名: %s\n' "$ASTRO_ARCHIVE" >&2; exit 1; fi
+mkdir -p -- "$(dirname -- "$ASTRO_ARCHIVE")"
+ASTRO_DIRNAME=$(basename -- "$ASTRO_SOURCE")
+ASTRO_PACK_WORK=$(mktemp -d -- "$(dirname -- "$ASTRO_ARCHIVE")/.astro-pack.XXXXXX")
+astro_pack_cleanup() {
+  local astro_pack_status=$?
+  trap - EXIT
+  # Windows scanners can briefly hold the published archive's other hard link.
+  # Preserve the packing result if cleanup alone is delayed by a sharing lock.
+  for astro_pack_attempt in 1 2 3 4 5; do
+    if rm -rf -- "$ASTRO_PACK_WORK" 2>/dev/null; then exit "$astro_pack_status"; fi
+    sleep 0.2
+  done
+  printf '提示：临时目录暂时无法清理，请稍后删除：%s\n' "$ASTRO_PACK_WORK" >&2
+  exit "$astro_pack_status"
+}
+trap astro_pack_cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+# Keep installed plugins including their Git repositories, so an explicit
+# :Lazy update still works. Only the installation's own development Git
+# repository and known runtime/user state are excluded.
+(
+  cd -- "$ASTRO_SOURCE"
+  find . \( -path './.git' \
+    -o -path './cache' -o -path './state' -o -path './tmp' -o -path './logs' \
+    -o -path './.patch-backups' -o -path './.installer' \
+    -o -path './docs/verification' -o -path './vscode/verification' \
+    -o -path './data/nvim/dirsession' -o -path './data/nvim/session' \
+    -o -path './data/nvim/snacks' -o -path './data/nvim/neo-tree.nvim.log' \
+    -o -name '__pycache__' -o -name '*.pyc' -o -name '*.pyo' \
+    -o -path './data/nvim/lazy/*/.git/logs' \
+    -o \( -path './data/nvim/lazy/*/.git/modules/*/logs' \
+      ! -path '*/refs/*' ! -path '*/objects/*' \) \
+    -o -path './examples/cpp/.cache' -o -path './examples/cpp/build' \
+    -o -path './examples/cpp/compile_commands.json' \
+    -o -path './env.sh.before-*' -o -path './config/*.before-*' \
+    -o -path './config/*.bak' -o -path './config/*.bak.*' \) -prune -o -print0
+) > "$ASTRO_PACK_WORK/candidates"
+
+declare -A ASTRO_PACK_SELECTED=()
+declare -a ASTRO_PACK_LINK_PATHS=() ASTRO_PACK_LINK_TARGETS=()
+ASTRO_PACK_COUNT=0
+while IFS= read -r -d '' ASTRO_RELATIVE; do
+  ASTRO_PATH="$ASTRO_SOURCE/${ASTRO_RELATIVE#./}"
+  if [[ $ASTRO_RELATIVE == . ]]; then ASTRO_PATH="$ASTRO_SOURCE"; fi
+  if [[ -L "$ASTRO_PATH" ]]; then
+    IFS= read -r -d '' ASTRO_LINK < <(readlink -z -- "$ASTRO_PATH")
+    if [[ $ASTRO_LINK == /* ]]; then
+      printf '无法搬迁绝对软链接: %s -> %s\n' "$ASTRO_RELATIVE" "$ASTRO_LINK" >&2; exit 1
+    fi
+    if ! IFS= read -r -d '' ASTRO_RESOLVED < <(realpath -ze -- "$ASTRO_PATH"); then
+      printf '软链接目标不存在: %s -> %s\n' "$ASTRO_RELATIVE" "$ASTRO_LINK" >&2; exit 1
+    fi
+    case "$ASTRO_RESOLVED" in
+      "$ASTRO_SOURCE") ASTRO_RESOLVED_RELATIVE=. ;;
+      "$ASTRO_SOURCE"/*) ASTRO_RESOLVED_RELATIVE="./${ASTRO_RESOLVED#"$ASTRO_SOURCE"/}" ;;
+      *) printf '软链接指向安装目录之外: %s -> %s\n' "$ASTRO_RELATIVE" "$ASTRO_LINK" >&2; exit 1 ;;
+    esac
+    ASTRO_PACK_LINK_PATHS+=("$ASTRO_RELATIVE")
+    ASTRO_PACK_LINK_TARGETS+=("$ASTRO_RESOLVED_RELATIVE")
+  elif [[ -f "$ASTRO_PATH" && ${ASTRO_RELATIVE##*/} == .git ]]; then
+    if (( $(stat -c %s -- "$ASTRO_PATH") > 65536 )); then
+      printf '插件 Git 引用文件过大: %s\n' "$ASTRO_RELATIVE" >&2; exit 1
+    fi
+    ASTRO_GIT_REF=$(<"$ASTRO_PATH")
+    if [[ $ASTRO_GIT_REF != 'gitdir: '* || -z ${ASTRO_GIT_REF#gitdir: } \
+      || $ASTRO_GIT_REF == *$'\n'* || $ASTRO_GIT_REF == *$'\r'* ]]; then
+      printf '无法识别插件 Git 引用文件: %s\n' "$ASTRO_RELATIVE" >&2; exit 1
+    fi
+    ASTRO_GIT_TARGET=${ASTRO_GIT_REF#gitdir: }
+    if [[ $ASTRO_GIT_TARGET == /* ]]; then
+      printf '插件 Git 引用使用不可搬迁的绝对路径: %s -> %s\n' "$ASTRO_RELATIVE" "$ASTRO_GIT_TARGET" >&2; exit 1
+    fi
+    if ! IFS= read -r -d '' ASTRO_RESOLVED < <(realpath -ze -- "${ASTRO_PATH%/*}/$ASTRO_GIT_TARGET") \
+      || [[ ! -d "$ASTRO_RESOLVED" ]]; then
+      printf '插件 Git 引用目录不存在: %s -> %s\n' "$ASTRO_RELATIVE" "$ASTRO_GIT_TARGET" >&2; exit 1
+    fi
+    case "$ASTRO_RESOLVED" in
+      "$ASTRO_SOURCE") ASTRO_RESOLVED_RELATIVE=. ;;
+      "$ASTRO_SOURCE"/*) ASTRO_RESOLVED_RELATIVE="./${ASTRO_RESOLVED#"$ASTRO_SOURCE"/}" ;;
+      *) printf '插件 Git 引用指向安装目录之外: %s -> %s\n' "$ASTRO_RELATIVE" "$ASTRO_GIT_TARGET" >&2; exit 1 ;;
+    esac
+    ASTRO_PACK_LINK_PATHS+=("$ASTRO_RELATIVE")
+    ASTRO_PACK_LINK_TARGETS+=("$ASTRO_RESOLVED_RELATIVE")
+  elif [[ ! -f "$ASTRO_PATH" && ! -d "$ASTRO_PATH" ]]; then
+    printf '安装目录包含不可打包的特殊文件: %s\n' "$ASTRO_RELATIVE" >&2; exit 1
+  fi
+  ASTRO_PACK_SELECTED["$ASTRO_RELATIVE"]=1
+  if [[ $ASTRO_RELATIVE == . ]]; then
+    printf '%s\0' "$ASTRO_DIRNAME"
+  else
+    printf '%s/%s\0' "$ASTRO_DIRNAME" "${ASTRO_RELATIVE#./}"
+  fi
+  (( ASTRO_PACK_COUNT += 1 ))
+# Bash's NUL-delimited read consumes a regular file byte by byte. A buffered
+# producer avoids one Windows/DrvFS request per byte when output is on /mnt/d.
+done < <(cat -- "$ASTRO_PACK_WORK/candidates") > "$ASTRO_PACK_WORK/members"
+
+for ASTRO_INDEX in "${!ASTRO_PACK_LINK_PATHS[@]}"; do
+  if [[ ! ${ASTRO_PACK_SELECTED["${ASTRO_PACK_LINK_TARGETS[$ASTRO_INDEX]}"]+present} ]]; then
+    printf '软链接或 Git 引用目标被打包规则排除: %s -> %s\n' \
+      "${ASTRO_PACK_LINK_PATHS[$ASTRO_INDEX]}" "${ASTRO_PACK_LINK_TARGETS[$ASTRO_INDEX]}" >&2
+    exit 1
+  fi
+done
+
+astro_compress() {
+  if command -v pigz >/dev/null 2>&1; then
+    # Optional host acceleration; gzip remains the dependency-free fallback.
+    pigz -6 -n -p 2
+  else
+    gzip -6 -n
+  fi
+}
+tar -cf - -C "$(dirname -- "$ASTRO_SOURCE")" \
+  --null --verbatim-files-from --no-recursion --files-from="$ASTRO_PACK_WORK/members" \
+  | astro_compress > "$ASTRO_PACK_WORK/archive.tar.gz"
+# Same-filesystem hard-link publication is atomic and refuses an existing name,
+# even if another process created the destination after our initial check.
+ln -- "$ASTRO_PACK_WORK/archive.tar.gz" "$ASTRO_ARCHIVE"
+printf '已打包: %s\n' "$ASTRO_ARCHIVE"
+printf '归档成员: %s；已保留插件 Git 仓库，排除根开发仓库、个人历史、缓存与临时文件。\n' "$ASTRO_PACK_COUNT"
+printf '解压后执行: source <新目录>/env.sh，然后运行 astronvim <项目目录>\n'

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ ! -t 1 ]]; then
+  printf '请在 VS Code 终端中执行本命令，以便向客户端发送恢复通知。\n' >&2
+  exit 1
+fi
+# Keep the marker visible long enough for the client extension to observe it,
+# then restore the original terminal title. No configuration files are changed.
+astro_restore_token="$(date +%s)-$$-${RANDOM}"
+printf '\033[22;0t\033]2;AstroNvimPortable:restore:%s\007' "$astro_restore_token"
+trap 'printf "\033[23;0t"' EXIT
+sleep 0.6
+printf '已发送 VS Code 快捷键与鼠标设置恢复通知；双键事务需 1.0.8 或更新客户端恢复。\n'

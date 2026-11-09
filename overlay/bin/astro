@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ASTRO_LAUNCHER=$(readlink -f -- "${BASH_SOURCE[0]}")
+ASTRO_EXPECTED_ROOT=$(cd -- "$(dirname -- "$ASTRO_LAUNCHER")/.." && pwd -P)
+if [[ ${ASTRONVIM_ROOT:-} != "$ASTRO_EXPECTED_ROOT" || ${XDG_CONFIG_HOME:-} != "$ASTRO_EXPECTED_ROOT/config" ]]; then
+  printf '请先执行: source %q/env.sh\n' "$ASTRO_EXPECTED_ROOT" >&2
+  exit 1
+fi
+mkdir -p -- "$XDG_STATE_HOME" "$XDG_CACHE_HOME" "$TMPDIR"
+# Opening a folder makes that folder the workspace for all search/debug actions.
+# Do not pass `.` to Neovim: AstroNvim's directory handling would open a second
+# Neo-tree beside the one created by portable_ui, leaving duplicate explorers.
+if [[ $# -eq 1 && -d "$1" ]]; then cd -- "$1"; set --; fi
+ASTRO_WT_KEY_TOKEN=""
+ASTRO_WT_KEY_ACTIVE=0
+ASTRO_VSCODE_TITLE_ACTIVE=0
+if [[ -n ${WT_SESSION:-} && -n ${WSL_DISTRO_NAME:-} && -x $(command -v powershell.exe 2>/dev/null || true) && -x $(command -v wslpath 2>/dev/null || true) ]]; then
+  ASTRO_WT_KEY_TOKEN=$(cat /proc/sys/kernel/random/uuid)
+  ASTRO_WT_KEY_HELPER=$(wslpath -w "$ASTRONVIM_ROOT/bin/astro-wt-shortcut.ps1")
+  if powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$ASTRO_WT_KEY_HELPER" \
+      -Mode Enable -Token "$ASTRO_WT_KEY_TOKEN" -Distro "$WSL_DISTRO_NAME" \
+      -OwnerPid "$$" -Launcher "$ASTRO_LAUNCHER"; then
+    ASTRO_WT_KEY_ACTIVE=1
+  else
+    printf 'Windows Terminal 快捷键未能临时转发，Ctrl+Shift+N 可能会新开 PowerShell 窗口。\n' >&2
+  fi
+fi
+astro_restore_wt_key() {
+  if [[ $ASTRO_VSCODE_TITLE_ACTIVE == 1 ]]; then
+    printf '\033[23;0t'
+    ASTRO_VSCODE_TITLE_ACTIVE=0
+  fi
+  if [[ $ASTRO_WT_KEY_ACTIVE == 1 ]]; then
+    powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$ASTRO_WT_KEY_HELPER" \
+      -Mode Disable -Token "$ASTRO_WT_KEY_TOKEN" -Distro "$WSL_DISTRO_NAME" \
+      -OwnerPid "$$" -Launcher "$ASTRO_LAUNCHER" >/dev/null || \
+      printf 'Windows Terminal 快捷键恢复失败；下次启动 AstroNvim 会再次整理该配置。\n' >&2
+  fi
+}
+trap astro_restore_wt_key EXIT
+if [[ -t 1 ]]; then
+  # The VS Code UI extension can see OSC titles even through PowerShell + SSH.
+  # Save/pop the previous title so normal exit and the whole-editor X restore it.
+  ASTRO_VSCODE_TITLE_ACTIVE=1
+  export ASTRO_VSCODE_TITLE_TOKEN="$(date +%s)-$$-${RANDOM}"
+  printf '\033[22;0t\033]2;AstroNvimPortable:active:%s\007' "$ASTRO_VSCODE_TITLE_TOKEN"
+fi
+"$ASTRONVIM_ROOT/opt/nvim/bin/nvim" "$@"

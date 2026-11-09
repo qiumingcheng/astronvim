@@ -1,0 +1,13 @@
+diff --git a/lua/astroui/folding.lua b/lua/astroui/folding.lua
+index ca679c5..b08765a 100644
+--- a/lua/astroui/folding.lua
++++ b/lua/astroui/folding.lua
+@@ -19,7 +19,7 @@ local fold_methods = {
+   end,
+   treesitter = function(lnum, bufnr)
+     local treesitter = require "astrocore.treesitter"
+-    if treesitter.has_parser(bufnr, "folds") and treesitter.is_enabled(bufnr) then
++    if treesitter.is_enabled(bufnr) and treesitter.has_parser(bufnr, "folds") then
+       return vim.treesitter.foldexpr(lnum)
+     end
+   end,

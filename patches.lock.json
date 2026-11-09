@@ -1,0 +1,22 @@
+{
+  "neovim": {
+    "patch": "patches/neovim-loader.patch",
+    "patch_sha256": "2045bf740b0fd9a84fbabbb69e148be74e2495625a005fd1e5e60f66e1c78712",
+    "files": {
+      "opt/nvim/share/nvim/runtime/lua/vim/loader.lua": {
+        "before": "2d06787e7114d177f1964f8208efb8d08ee982604b0a11d3aa4180475f262c24",
+        "after": "456fa1efcd83816f78cf023794be186a599d298538e7294b17dfa2b5a9448aa7"
+      }
+    }
+  },
+  "gdb": {
+    "patch": "patches/gdb-dap.patch",
+    "patch_sha256": "009566f582d71d95dd0cf9247e0a71628332d601157fcb636271f106fb0718ed",
+    "files": {
+      "opt/gdb/share/gdb/python/gdb/dap/breakpoint.py": {
+        "before": "b6a00cb5bac504d2043c15b475866c52fc2228d4f33836e767a07616166c30a5",
+        "after": "d3a81c156866f93539e4a8a83cdd06dc8c84b400ed753ac307ced37fa7d93df5"
+      }
+    }
+  }
+}

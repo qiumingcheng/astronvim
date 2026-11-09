@@ -1,0 +1,22 @@
+diff --git a/lua/dap/session.lua b/lua/dap/session.lua
+index 2f2fe42..08b6a74 100644
+--- a/lua/dap/session.lua
++++ b/lua/dap/session.lua
+@@ -1084,7 +1084,6 @@ function Session:handle_body(body)
+   if decoded.request_seq then
+     local callback = self.message_callbacks[decoded.request_seq]
+     local request = self.message_requests[decoded.request_seq]
+-    self.message_requests[decoded.request_seq] = nil
+     self.message_callbacks[decoded.request_seq] = nil
+     if not callback then
+       log:error('No callback found. Did the debug adapter send duplicate responses?', decoded)
+@@ -1102,6 +1101,9 @@ function Session:handle_body(body)
+       setmetatable(err, err_mt)
+     end
+     vim.schedule(function()
++      -- Keep the read in flight until its callback is actually dispatched.
++      -- UI readers can otherwise issue a duplicate between decode and dispatch.
++      self.message_requests[decoded.request_seq] = nil
+       local before = listeners.before[decoded.command]
+       call_listener(before, self, err, response, request, decoded.request_seq)
+       callback(err, response, decoded.request_seq)

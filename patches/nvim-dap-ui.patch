@@ -1,0 +1,540 @@
+diff --git a/lua/dapui/client/init.lua b/lua/dapui/client/init.lua
+index 92fcd53..0d72f22 100644
+--- a/lua/dapui/client/init.lua
++++ b/lua/dapui/client/init.lua
+@@ -109,13 +109,16 @@ end
+ ---@return dapui.DAPClient
+ local function create_client(session_factory, breakpoints)
+   breakpoints = breakpoints or require("dap.breakpoints")
++  local reads = require("dapui.client.reads").new(session_factory)
+   local request_seqs = {}
+   local async_request = nio.wrap(function(command, args, cb)
+     local session = session_factory()
+     request_seqs[session] = request_seqs[session] or {}
+-    request_seqs[session][session.seq] = true
++    local seq = session.seq
++    request_seqs[session][seq] = true
+     session:request(command, args, function(...)
+-      request_seqs[session][session.seq] = nil
++      -- Keep the mark through the after-response listeners, then remove it.
++      vim.schedule(function() request_seqs[session][seq] = nil end)
+       cb(...)
+     end)
+   end, 3)
+@@ -124,7 +127,7 @@ local function create_client(session_factory, breakpoints)
+     __index = function(_, command)
+       return function(args)
+         local start = vim.loop.now()
+-        local err, body = async_request(command, args)
++        local err, body = reads.request(command, args, async_request)
+         local diff = vim.loop.now() - start
+         if err then
+           error(Error(err, { command = command, args = args }))
+@@ -167,6 +170,7 @@ local function create_client(session_factory, breakpoints)
+           wrap(listener)
+         else
+           wrap(function(err, body, req, req_seq)
++            if not reads.valid_response(session_factory(), event, req, req_seq) then return end
+             if (request_seqs[session_factory()] or {})[req_seq] then
+               return
+             end
+@@ -178,10 +182,12 @@ local function create_client(session_factory, breakpoints)
+   })
+ 
+   local client = setmetatable({
++    reads = reads,
+     breakpoints = create_breakpoints_proxy(breakpoints, session_factory),
+     request = request,
+     listen = listen,
+     shutdown = function()
++      reads.shutdown()
+       for _, listener in ipairs(listener_ids) do
+         dap.listeners.before[listener[1]][listener[2]] = nil
+         dap.listeners.after[listener[1]][listener[2]] = nil
+diff --git a/lua/dapui/components/threads.lua b/lua/dapui/components/threads.lua
+index 62e78a7..ad52e5c 100644
+--- a/lua/dapui/components/threads.lua
++++ b/lua/dapui/components/threads.lua
+@@ -1,5 +1,6 @@
+ local config = require("dapui.config")
+ local frame_renderer = require("dapui.components.frames")
++local nio = require("nio")
+ 
+ ---@param client dapui.DAPClient
+ ---@param send_ready function
+@@ -24,6 +25,36 @@ return function(client, send_ready)
+ 
+   local render_frames = frame_renderer(client, send_ready)
+   local subtle_threads = {}
++  local configured_names, configured_patterns = {}, {}
++  do
++    local ok, filter = pcall(require, "dap_thread_filter")
++    if ok and type(filter) == "table" then
++      for _, value in ipairs(filter.names or {}) do
++        if type(value) == "string" and value ~= "" then
++          configured_names[value:lower()] = true
++        end
++      end
++      for _, value in ipairs(filter.patterns or {}) do
++        if type(value) == "string" and value ~= "" then
++          configured_patterns[#configured_patterns + 1] = value
++        end
++      end
++    end
++  end
++  local function show_all_threads()
++    return vim.env.ASTRO_DAP_SHOW_ALL_THREADS == "1" or vim.g.astronvim_show_all_threads == 1
++  end
++
++  local function should_show_thread(thread, stopped_thread_id)
++    if thread.id == stopped_thread_id then return true end
++    local name = type(thread.name) == "string" and thread.name:lower() or ""
++    if configured_names[name] then return true end
++    for _, pattern in ipairs(configured_patterns) do
++      if name:match(pattern) then return true end
++    end
++    return false
++  end
++
+   return {
+     ---@param canvas dapui.Canvas
+     render = function(canvas, indent)
+@@ -35,6 +66,7 @@ return function(client, send_ready)
+       end
+ 
+       indent = indent or 0
++      local failed_reads = {}
+ 
+       ---@param thread dapui.types.Thread
+       local function render_thread(thread, match_group)
+@@ -42,12 +74,14 @@ return function(client, send_ready)
+ 
+         canvas:write({ { thread.name, group = match_group }, ":\n" })
+ 
+-        render_frames.render(
+-          canvas,
+-          thread.id,
+-          subtle_threads[thread.id] or false,
+-          indent + config.render.indent
+-        )
++        if not failed_reads[thread.id] then
++          render_frames.render(
++            canvas,
++            thread.id,
++            subtle_threads[thread.id] or false,
++            indent + config.render.indent
++          )
++        end
+ 
+         local last_line = canvas:length()
+ 
+@@ -62,13 +96,42 @@ return function(client, send_ready)
+       end
+ 
+       local stopped_thread_id = session.stopped_thread_id
+-
++      local visible = {}
+       for _, thread in pairs(threads) do
++        if show_all_threads() or should_show_thread(thread, stopped_thread_id) then
++          visible[#visible + 1] = thread
++        end
++      end
++
++      -- Fill the current-pause read cache with a bounded pipeline. Sequential
++      -- stack reads otherwise pay an event-loop round trip for every worker.
++      -- Keep every visible thread/frame, and stop dispatching if the user steps
++      -- or selects another frame before these responses arrive.
++      local token, next_thread = client.reads.token(), 1
++      local workers = {}
++      for _ = 1, (#visible > 1 and math.min(4, #visible) or 0) do
++        workers[#workers + 1] = function()
++          while client.reads.current(token) do
++            local thread = visible[next_thread]
++            next_thread = next_thread + 1
++            if not thread then return end
++            local entry = session.threads[thread.id]
++            if entry and not entry.frames then
++              local ok = pcall(client.request.stackTrace, { threadId = thread.id })
++              failed_reads[thread.id] = not ok
++            end
++          end
++        end
++      end
++      if #workers > 0 then nio.gather(workers) end
++      if not client.reads.current(token) then return end
++
++      for _, thread in pairs(visible) do
+         if thread.id == stopped_thread_id then
+           render_thread(thread, "DapUIStoppedThread")
+         end
+       end
+-      for _, thread in pairs(threads) do
++      for _, thread in pairs(visible) do
+         if thread.id ~= stopped_thread_id then
+           render_thread(thread, "DapUIThread")
+         end
+diff --git a/lua/dapui/elements/scopes.lua b/lua/dapui/elements/scopes.lua
+index c321ca3..9e2e199 100644
+--- a/lua/dapui/elements/scopes.lua
++++ b/lua/dapui/elements/scopes.lua
+@@ -24,8 +24,11 @@ return function(client)
+ 
+   ---@nodoc
+   function dapui.elements.scopes.render()
++    if not client.reads.ready() then return end
++    local token = client.reads.token()
+     local canvas = Canvas.new()
+     scopes.render(canvas)
++    if not client.reads.current(token) then return end
+     canvas:render_buffer(dapui.elements.scopes.buffer(), config.element_mapping("scopes"))
+   end
+ 
+diff --git a/lua/dapui/elements/stacks.lua b/lua/dapui/elements/stacks.lua
+index f0b4a7e..380beed 100644
+--- a/lua/dapui/elements/stacks.lua
++++ b/lua/dapui/elements/stacks.lua
+@@ -23,8 +23,11 @@ return function(client)
+ 
+   ---@nodoc
+   function dapui.elements.stacks.render()
++    if not client.reads.ready() then return end
++    local token = client.reads.token()
+     local canvas = Canvas.new()
+     threads.render(canvas)
++    if not client.reads.current(token) then return end
+     canvas:render_buffer(dapui.elements.stacks.buffer(), config.element_mapping("stacks"))
+   end
+ 
+diff --git a/lua/dapui/elements/watches.lua b/lua/dapui/elements/watches.lua
+index 0411572..9283443 100644
+--- a/lua/dapui/elements/watches.lua
++++ b/lua/dapui/elements/watches.lua
+@@ -68,8 +68,11 @@ return function(client)
+ 
+   ---@nodoc
+   function dapui.elements.watches.render()
++    if client.session and not client.reads.ready() then return end
++    local token = client.reads.token()
+     local canvas = Canvas.new()
+     watches.render(canvas)
++    if not client.reads.current(token) then return end
+     canvas:render_buffer(dapui.elements.watches.buffer(), config.element_mapping("watches"))
+   end
+ 
+diff --git a/lua/dapui/render/canvas.lua b/lua/dapui/render/canvas.lua
+index f2ceb8e..08650da 100644
+--- a/lua/dapui/render/canvas.lua
++++ b/lua/dapui/render/canvas.lua
+@@ -6,6 +6,39 @@ local util = require("dapui.util")
+ local config = require("dapui.config")
+ M.namespace = api.nvim_create_namespace("dapui")
+ 
++-- Only reuse our own unchanged, non-prompt buffer rendering. A changedtick
++-- invalidates this snapshot when continued/terminated handlers clear panes.
++-- Keep value snapshots: callers may edit/reuse a Canvas after rendering it.
++local rendered = {}
++api.nvim_create_autocmd("BufWipeout", {
++  group = api.nvim_create_augroup("DapUICanvasRenderCache", { clear = true }),
++  callback = function(ev) rendered[ev.buf] = nil end,
++})
++local function same_render(buffer, canvas)
++  local prev = rendered[buffer]
++  if canvas.prompt or not prev or prev.tick ~= api.nvim_buf_get_changedtick(buffer)
++    or #prev.lines ~= #canvas.lines or #prev.matches ~= #canvas.matches * 4 then return false end
++  for i, line in ipairs(canvas.lines) do
++    if prev.lines[i] ~= line then return false end
++  end
++  for i, match in ipairs(canvas.matches) do
++    local at, pos = (i - 1) * 4, match[2]
++    if prev.matches[at+1] ~= match[1] or prev.matches[at+2] ~= pos[1]
++      or prev.matches[at+3] ~= (pos[2] or false) or prev.matches[at+4] ~= (pos[3] or false) then return false end
++  end
++  return true
++end
++local function remember_render(buffer, canvas)
++  local prev = { tick = api.nvim_buf_get_changedtick(buffer), lines = {}, matches = {} }
++  for i, line in ipairs(canvas.lines) do prev.lines[i] = line end
++  for i, match in ipairs(canvas.matches) do
++    local at, pos = (i - 1) * 4, match[2]
++    prev.matches[at+1], prev.matches[at+2] = match[1], pos[1]
++    prev.matches[at+3], prev.matches[at+4] = pos[2] or false, pos[3] or false
++  end
++  rendered[buffer] = prev
++end
++
+ ---@class dapui.Canvas
+ ---@field lines table
+ ---@field matches table
+@@ -52,20 +85,28 @@ function Canvas:write(text, opts)
+   if type(text) ~= "string" then
+     text = tostring(text)
+   end
+-  opts = opts or {}
+-  local lines = vim.split(text, "[\r]?\n", { plain = false, trimempty = false })
+-  if #self.lines == 0 then
+-    self.lines = { "" }
+-  end
+-  for i, line in ipairs(lines) do
+-    local cur_line = self.lines[#self.lines]
+-    self.lines[#self.lines] = cur_line .. line
+-    if opts.group and #line > 0 then
+-      self.matches[#self.matches + 1] = { opts.group, { #self.lines, #cur_line + 1, #line } }
++  local group = opts and opts.group
++  if #self.lines == 0 then self.lines = { "" } end
++  -- Most writes are a single token. Split CRLF/LF directly without allocating
++  -- vim.split's iterator/options/temporary array for every name and value.
++  local from = 1
++  while true do
++    local nl = text:find("\n", from, true)
++    local line
++    if nl then
++      line = text:sub(from, nl - (text:byte(nl - 1) == 13 and 2 or 1))
++    else
++      line = from == 1 and text or text:sub(from)
+     end
+-    if i < #lines then
+-      table.insert(self.lines, "")
++    local row = #self.lines
++    local cur_line = self.lines[row]
++    self.lines[row] = cur_line .. line
++    if group and #line > 0 then
++      self.matches[#self.matches + 1] = { group, { row, #cur_line + 1, #line } }
+     end
++    if not nl then break end
++    self.lines[row + 1] = ""
++    from = nl + 1
+   end
+ end
+ 
+@@ -150,23 +191,23 @@ function Canvas:render_buffer(buffer, action_keys)
+ 
+   local lines = self.lines
+   local matches = self.matches
+-  api.nvim_buf_clear_namespace(buffer, M.namespace, 0, -1)
+-  api.nvim_buf_set_lines(buffer, 0, #lines, false, lines)
+-  local last_line = vim.fn.getbufinfo(buffer)[1].linecount
+-  if last_line > #lines then
+-    api.nvim_buf_set_lines(buffer, #lines, last_line, false, {})
+-  end
+-  for _, match in pairs(matches) do
+-    local pos = match[2]
+-    pcall(
+-      api.nvim_buf_set_extmark,
+-      buffer,
+-      M.namespace,
+-      pos[1] - 1,
+-      (pos[2] or 1) - 1,
+-      { end_col = pos[3] and (pos[2] + pos[3] - 1), hl_group = match[1] }
+-    )
++  if not same_render(buffer, self) then
++    api.nvim_buf_clear_namespace(buffer, M.namespace, 0, -1)
++    api.nvim_buf_set_lines(buffer, 0, -1, false, lines)
++    for _, match in pairs(matches) do
++      local pos = match[2]
++      pcall(
++        api.nvim_buf_set_extmark,
++        buffer,
++        M.namespace,
++        pos[1] - 1,
++        (pos[2] or 1) - 1,
++        { end_col = pos[3] and (pos[2] + pos[3] - 1), hl_group = match[1] }
++      )
++    end
++    remember_render(buffer, self)
+   end
++  if self.prompt then rendered[buffer] = nil end
+   if self.expand_lines then
+     local group = api.nvim_create_augroup(
+       "DAPUIExpandLongLinesFor" .. vim.fn.bufname(buffer):gsub("DAP ", ""),
+diff --git a/lua/dapui/windows/layout.lua b/lua/dapui/windows/layout.lua
+index de9efd9..b61f8c9 100644
+--- a/lua/dapui/windows/layout.lua
++++ b/lua/dapui/windows/layout.lua
+@@ -83,6 +83,11 @@ function WindowLayout:resize(opts)
+   opts = opts or {}
+   if opts.reset then
+     self.area_state.size = self.area_state.init_size
++    -- Keep the reset proportions for subsequent terminal resizes as well.
++    -- Otherwise an old/clamped split ratio silently replaces the reset view.
++    for _, win_state in ipairs(self.win_states) do
++      win_state.size = win_state.init_size
++    end
+   end
+   if not self:is_open() then
+     return
+@@ -176,8 +181,10 @@ function WindowLayout:_init_win_settings(win)
+     list = false,
+     relativenumber = false,
+     number = false,
+-    winfixwidth = true,
+-    winfixheight = true,
++    -- Let the user drag DAP pane borders.  The layout remembers the current
++    -- proportions when it is closed and reapplies them on the next open.
++    winfixwidth = false,
++    winfixheight = false,
+     wrap = config.wrap,
+     signcolumn = "auto",
+     spell = false,
+--- /dev/null
++++ b/lua/dapui/client/reads.lua
+@@ -0,0 +1,160 @@
++-- Reuse read-only responses within one pause. Never cache evaluation commands.
++local dap, nio = require("dap"), require("nio")
++local M = {}
++local serial = 0
++
++local function key(command, args)
++  if command ~= "variables" and command ~= "stackTrace" then return end
++  args = vim.deepcopy(args or {})
++  if command == "stackTrace" then
++    args.startFrame = args.startFrame or 0
++    args.levels = args.levels or 0
++  end
++  local function stable(value)
++    if type(value) ~= "table" then return vim.json.encode(value) end
++    local parts = {}
++    for _, name in ipairs(vim.tbl_keys(value)) do parts[#parts + 1] = name end
++    table.sort(parts)
++    for i, name in ipairs(parts) do parts[i] = vim.json.encode(name) .. ":" .. stable(value[name]) end
++    return "{" .. table.concat(parts, ",") .. "}"
++  end
++  return command .. stable(args)
++end
++
++function M.new(session_factory)
++  serial = serial + 1
++  local id = "portable_reads_" .. serial
++  local states, hooks = setmetatable({}, { __mode = "k" }), {}
++  local function state(s)
++    if not states[s] then states[s] = { epoch = 0, floor = s.seq, entries = {}, scope_frame = nil } end
++    return states[s]
++  end
++  local function finish(entry, result)
++    if not entry.future.is_set() then entry.future.set(result) end
++  end
++  local function reset(s, keep_scopes)
++    local st = state(s)
++    st.epoch, st.floor = st.epoch + 1, s.seq
++    local old = st.entries
++    st.entries = {}
++    if not keep_scopes then st.scope_frame = nil end
++    -- Core's eager scope values must also be invalidated after a variable edit.
++    for _, scope in ipairs((s.current_frame or {}).scopes or {}) do scope.variables = nil end
++    for _, entry in pairs(old) do finish(entry, { stale = true }) end
++  end
++  local function listen(phase, event, fn)
++    dap.listeners[phase][event][id] = fn
++    hooks[#hooks + 1] = { phase, event }
++  end
++  for _, event in ipairs({ "initialized", "stopped", "continued", "terminated", "exited" }) do
++    listen("before", "event_" .. event, function(s) reset(s, false) end)
++  end
++  for _, command in ipairs({ "next", "stepIn", "stepOut", "continue", "stepBack", "reverseContinue", "restartFrame" }) do
++    listen("before", command, function(s, err)
++      -- GDB may omit continued. A late response must not clear a newer pause.
++      if not err and not s.stopped_thread_id then reset(s, false) end
++    end)
++  end
++  for _, command in ipairs({ "setVariable", "setExpression", "writeMemory" }) do
++    listen("before", command, function(s) reset(s, true) end)
++  end
++  listen("before", "evaluate", function(s, _, _, args)
++    if args and args.context == "repl" then reset(s, true) end
++  end)
++  listen("before", "event_invalidated", function(s) reset(s, true) end)
++  listen("before", "disconnect", function(s) reset(s, false) end)
++
++  local cache = {}
++  function cache.valid_response(s, command, args, seq)
++    if command ~= "scopes" and command ~= "variables" and command ~= "stackTrace" then return true end
++    if not s or s.closed then return false end
++    local st = state(s)
++    if (command == "scopes" or command == "variables" or command == "stackTrace") and seq < st.floor then return false end
++    if command == "scopes" then
++      return s.stopped_thread_id ~= nil and s.current_frame and args.frameId == s.current_frame.id
++    end
++    return true
++  end
++  listen("before", "scopes", function(s, err, body, args, seq)
++    if not err and body and cache.valid_response(s, "scopes", args, seq) then state(s).scope_frame = s.current_frame end
++  end)
++  -- Join the core's in-flight eager variables request instead of sending a copy.
++  for _, command in ipairs({ "variables", "stackTrace" }) do
++    listen("after", command, function(s, err, body, args, seq)
++      local st = state(s)
++      local entry = st.entries[key(command, args)]
++      if entry and entry.seq == seq and seq >= st.floor then
++        finish(entry, { err = err, body = body })
++        if err then st.entries[key(command, args)] = nil end
++      end
++    end)
++  end
++
++  function cache.token()
++    local s = session_factory()
++    return s and { session = s, epoch = state(s).epoch, frame = s.current_frame } or nil
++  end
++  function cache.current(token)
++    local s = session_factory()
++    if not token then return s == nil end
++    return s == token.session and not s.closed and s.stopped_thread_id ~= nil
++      and state(s).epoch == token.epoch and s.current_frame == token.frame
++  end
++  local function same_pause(token)
++    local s = session_factory()
++    return s == token.session and not s.closed and s.stopped_thread_id ~= nil and state(s).epoch == token.epoch
++  end
++  function cache.ready()
++    local s = session_factory()
++    return s and not s.closed and s.stopped_thread_id and s.current_frame
++      and state(s).scope_frame == s.current_frame and s.current_frame.scopes ~= nil
++  end
++  function cache.request(command, args, raw)
++    local k = key(command, args)
++    local s = session_factory()
++    if not k or not s then return raw(command, args) end
++    local st = state(s)
++    if s.closed or not s.stopped_thread_id then error("Debug frame is no longer paused") end
++    local token = cache.token()
++    local entry = st.entries[k]
++    if not entry then
++      -- nvim-dap already reads the current frame's scopes. Reuse their results.
++      if command == "variables" and not args.filter and not args.start and not args.count and not args.format then
++        for _, scope in ipairs((s.current_frame or {}).scopes or {}) do
++          if scope.variablesReference == args.variablesReference and scope.variables then
++            return nil, { variables = scope.variables }
++          end
++        end
++      end
++      entry = { future = nio.control.future() }
++      st.entries[k] = entry
++      for seq, pending in pairs(s.message_requests) do
++        -- The core only populates this table with arguments. Distinguish the
++        -- two read commands by their mandatory, disjoint argument fields.
++        local is_read = (command == "variables" and pending.variablesReference ~= nil)
++          or (command == "stackTrace" and pending.threadId ~= nil and pending.startFrame ~= nil)
++        if seq >= st.floor and is_read and key(command, pending) == k then entry.seq = seq; break end
++      end
++      if not entry.seq then
++        local ok, err, body = pcall(raw, command, args)
++        if not ok then
++          st.entries[k] = nil
++          finish(entry, { failure = err })
++        elseif same_pause(token) then
++          finish(entry, { err = err, body = body })
++          if err then st.entries[k] = nil end
++        else finish(entry, { stale = true }) end
++      end
++    end
++    local result = entry.future.wait()
++    if result.stale or not same_pause(token) then error("Debug frame changed while reading") end
++    if result.failure then error(result.failure) end
++    return result.err, result.body
++  end
++  function cache.shutdown()
++    for s in pairs(states) do reset(s, false) end
++    for _, hook in ipairs(hooks) do dap.listeners[hook[1]][hook[2]][id] = nil end
++  end
++  return cache
++end
++return M
